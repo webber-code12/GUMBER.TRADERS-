@@ -335,6 +335,19 @@
   .prod-card .prod-body{padding:16px;}
   .prod-card .brand-tag{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);}
   .prod-card h4{font-size:.95rem;margin:4px 0 12px;min-height:2.4em;}
+  .price-tag.price-ask{background:var(--gold);color:#2A2110;}
+  .prod-card.hidden{display:none;}
+
+  /* ===== Filter bar ===== */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;}
+  .filter-btn{
+    font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;
+    padding:9px 16px;border-radius:99px;border:1.5px solid var(--line);
+    background:var(--white);color:var(--ink-soft);cursor:pointer;
+    transition:all .3s var(--ease);
+  }
+  .filter-btn:hover{border-color:var(--green);color:var(--navy-deep);transform:translateY(-2px);}
+  .filter-btn.active{background:linear-gradient(120deg,var(--navy-deep),var(--green));color:#fff;border-color:transparent;box-shadow:0 8px 18px -8px rgba(28,122,94,.5);}
   .prod-card .btn{width:100%;padding:10px;font-size:.82rem;}
 
   /* ===== Testimonials ===== */
@@ -606,148 +619,360 @@
     <div class="section-head fade-up">
       <div class="eyebrow">What We Supply</div>
       <h2>Product Categories</h2>
-      <p>Browse the range we stock in wholesale quantities — tap any category to get a bulk quote on WhatsApp.</p>
+      <p>9 categories, 30+ products in stock — tap any category to jump to it in our full catalogue below.</p>
     </div>
     <div class="cat-grid">
-      <div class="cat-card fade-up stagger" style="--i:0">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583199/JB/DD/RC/147448395/whatsapp-image-2023-11-03-at-10-39-31-am-500x500.jpeg" alt="Facial kits" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:0" data-jump="facial-kit">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583199/JB/DD/RC/147448395/whatsapp-image-2023-11-03-at-10-39-31-am-500x500.jpeg" alt="Facial Kits" loading="lazy"></div>
         <div class="cat-body">
           <h3>Facial Kits</h3>
-          <p>Nutrigolw, De-Tan, Charcoal &amp; Coffee facial kits</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Facial%20Kits." target="_blank" rel="noopener">Get Quote →</a>
+          <p>Nutrigolw, De-Tan, Gold Kesar, Charcoal & Coffee facial kits</p>
+          <a class="cat-link" href="#catalog" onclick="setFilter('facial-kit')">View &amp; Get Quote →</a>
         </div>
       </div>
-      <div class="cat-card fade-up stagger" style="--i:1">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359584350/SI/NO/YL/147448395/nutriglow-vitamin-c-lightening-scrub-500x500.jpg" alt="Facial scrubs" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:1" data-jump="facial-scrub">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359584350/SI/NO/YL/147448395/nutriglow-vitamin-c-lightening-scrub-500x500.jpg" alt="Facial Scrubs" loading="lazy"></div>
         <div class="cat-body">
           <h3>Facial Scrubs</h3>
-          <p>Vitamin C, charcoal, papaya &amp; apricot scrubs</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Facial%20Scrubs." target="_blank" rel="noopener">Get Quote →</a>
+          <p>Vitamin C, charcoal, papaya, fruit & apricot scrubs</p>
+          <a class="cat-link" href="#catalog" onclick="setFilter('facial-scrub')">View &amp; Get Quote →</a>
         </div>
       </div>
-      <div class="cat-card fade-up stagger" style="--i:2">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589207/NX/XY/MB/147448395/nutriglow-anti-pigmentation-bleach-500x500.jpg" alt="Bleach creams" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:2" data-jump="bleach">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589207/NX/XY/MB/147448395/nutriglow-anti-pigmentation-bleach-500x500.jpg" alt="Bleach Creams" loading="lazy"></div>
         <div class="cat-body">
           <h3>Bleach Creams</h3>
-          <p>Anti-pigmentation, de-tan &amp; age-repair bleach</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Bleach%20Creams." target="_blank" rel="noopener">Get Quote →</a>
+          <p>Anti-pigmentation, de-tan, ubtan & age-repair bleach</p>
+          <a class="cat-link" href="#catalog" onclick="setFilter('bleach')">View &amp; Get Quote →</a>
         </div>
       </div>
-      <div class="cat-card fade-up stagger" style="--i:3">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583586/CD/LO/GE/147448395/nutriglow-anti-pollution-suncreen-50-500x500.jpeg" alt="Sunscreen lotions" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:3" data-jump="sunscreen">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583586/CD/LO/GE/147448395/nutriglow-anti-pollution-suncreen-50-500x500.jpeg" alt="Sunscreen Lotions" loading="lazy"></div>
         <div class="cat-body">
           <h3>Sunscreen Lotions</h3>
-          <p>SPF 30 &amp; SPF 50 anti-pollution sunscreens</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Sunscreen%20Lotions." target="_blank" rel="noopener">Get Quote →</a>
+          <p>SPF 30 & SPF 50 anti-pollution sunscreens</p>
+          <a class="cat-link" href="#catalog" onclick="setFilter('sunscreen')">View &amp; Get Quote →</a>
         </div>
       </div>
-      <div class="cat-card fade-up stagger" style="--i:4">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583170/FV/DB/JD/147448395/aroma-oil-control-face-wash-500x500.jpg" alt="Face wash" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:4" data-jump="facewash">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583170/FV/DB/JD/147448395/aroma-oil-control-face-wash-500x500.jpg" alt="Face Wash" loading="lazy"></div>
         <div class="cat-body">
           <h3>Face Wash</h3>
-          <p>Oil control, age control &amp; perfect glow face wash</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Face%20Wash." target="_blank" rel="noopener">Get Quote →</a>
+          <p>Oil control, age control & perfect glow face wash</p>
+          <a class="cat-link" href="#catalog" onclick="setFilter('facewash')">View &amp; Get Quote →</a>
         </div>
       </div>
-      <div class="cat-card fade-up stagger" style="--i:5">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589516/MW/RL/GR/147448395/kiddy-soft-cotton-pants-diaper-500x500.jpg" alt="Baby diapers" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:5" data-jump="diaper">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589516/MW/RL/GR/147448395/kiddy-soft-cotton-pants-diaper-500x500.jpg" alt="Diapers — Baby & Adult" loading="lazy"></div>
         <div class="cat-body">
-          <h3>Baby Diapers</h3>
-          <p>Cotton pants diapers &amp; daily-use baby essentials</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Baby%20Diapers." target="_blank" rel="noopener">Get Quote →</a>
+          <h3>Diapers — Baby &amp; Adult</h3>
+          <p>Cotton pants diapers for babies, plus adult diapers</p>
+          <a class="cat-link" href="#catalog" onclick="setFilter('diaper')">View &amp; Get Quote →</a>
         </div>
       </div>
-      <div class="cat-card fade-up stagger" style="--i:6">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359280780/DF/RZ/UG/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-500x500.jpeg" alt="Hair spa cream" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:6" data-jump="hairspa">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359280780/DF/RZ/UG/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-500x500.jpeg" alt="Hair Spa Cream" loading="lazy"></div>
         <div class="cat-body">
           <h3>Hair Spa Cream</h3>
           <p>Color-protect, keratin, protein &amp; biotin hair spa</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Hair%20Spa%20Cream." target="_blank" rel="noopener">Get Quote →</a>
+          <a class="cat-link" href="#catalog" onclick="setFilter('hairspa')">View &amp; Get Quote →</a>
         </div>
       </div>
-      <div class="cat-card fade-up stagger" style="--i:7">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588120/XZ/RA/DB/147448395/nutigolw-age-repair-tightening-serum-500x500.jpg" alt="Anti ageing serum" loading="lazy"></div>
+      <div class="cat-card fade-up stagger" style="--i:7" data-jump="serum">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588120/XZ/RA/DB/147448395/nutigolw-age-repair-tightening-serum-500x500.jpg" alt="Anti-Ageing Serum" loading="lazy"></div>
         <div class="cat-body">
           <h3>Anti-Ageing Serum</h3>
           <p>Age-repair tightening &amp; anti-pigmentation serum</p>
-          <a class="cat-link" href="https://wa.me/919914074261?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Anti-Ageing%20Serum." target="_blank" rel="noopener">Get Quote →</a>
+          <a class="cat-link" href="#catalog" onclick="setFilter('serum')">View &amp; Get Quote →</a>
+        </div>
+      </div>
+      <div class="cat-card fade-up stagger" style="--i:8" data-jump="creams">
+        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586724/SP/LL/WW/147448395/spf-aroma-leafs-revitalizing-day-cream-500x500.jpg" alt="Skin Creams & Gels" loading="lazy"></div>
+        <div class="cat-body">
+          <h3>Skin Creams &amp; Gels</h3>
+          <p>Skin whitening cream &amp; aloe vera gel</p>
+          <a class="cat-link" href="#catalog" onclick="setFilter('creams')">View &amp; Get Quote →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED PRODUCTS -->
-<section class="products">
+<!-- FULL PRODUCT CATALOG -->
+<section class="products" id="catalog">
   <div class="wrap">
     <div class="section-head fade-up">
-      <div class="eyebrow">Popular With Buyers</div>
-      <h2>Featured Products</h2>
-      <p>A few fast-moving items from our catalogue. Ask us for the full wholesale price list.</p>
+      <div class="eyebrow">Our Complete Range</div>
+      <h2>Full Product Catalogue</h2>
+      <p>All 32 products we currently stock across 9 categories. Filter by category or enquire directly — prices shown are per unit, wholesale rates on bulk orders.</p>
     </div>
-    <div class="prod-grid">
-      <div class="prod-card fade-up stagger" style="--i:0">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All (32)</button>
+      <button class="filter-btn" data-filter="facial-kit" onclick="setFilter('facial-kit')">Facial Kits (5)</button>
+      <button class="filter-btn" data-filter="facial-scrub" onclick="setFilter('facial-scrub')">Facial Scrubs (5)</button>
+      <button class="filter-btn" data-filter="bleach" onclick="setFilter('bleach')">Bleach Creams (4)</button>
+      <button class="filter-btn" data-filter="sunscreen" onclick="setFilter('sunscreen')">Sunscreen Lotions (3)</button>
+      <button class="filter-btn" data-filter="facewash" onclick="setFilter('facewash')">Face Wash (3)</button>
+      <button class="filter-btn" data-filter="diaper" onclick="setFilter('diaper')">Diapers — Baby & Adult (4)</button>
+      <button class="filter-btn" data-filter="hairspa" onclick="setFilter('hairspa')">Hair Spa Cream (4)</button>
+      <button class="filter-btn" data-filter="serum" onclick="setFilter('serum')">Anti-Ageing Serum (2)</button>
+      <button class="filter-btn" data-filter="creams" onclick="setFilter('creams')">Skin Creams & Gels (2)</button>
+    </div>
+    <div class="prod-grid" id="prodGrid">
+      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:0">
         <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583199/JB/DD/RC/147448395/whatsapp-image-2023-11-03-at-10-39-31-am-500x500.jpeg" alt="Nutrigolw Anti Pigmentation Facial Kit" loading="lazy"><span class="price-tag">₹300/Kit</span></div>
         <div class="prod-body">
           <div class="brand-tag">Nutriglow</div>
-          <h4>Anti Pigmentation Facial Kit</h4>
+          <h4>Nutrigolw Anti Pigmentation Facial Kit</h4>
           <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutrigolw%20Anti%20Pigmentation%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
-      <div class="prod-card fade-up stagger" style="--i:1">
+      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:1">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359584731/LK/ZY/OK/147448395/nutriglow-de-tan-dullness-removal-facial-kit-500x500.jpeg" alt="Nutriglow De Tan Dullness Removal Facial Kit" loading="lazy"><span class="price-tag">₹250/Kit</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow De Tan Dullness Removal Facial Kit</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20De%20Tan%20Dullness%20Removal%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:2">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587754/CU/MQ/GZ/147448395/nutriglow-gold-kesar-kesar-facial-kit-500x500.jpeg" alt="Nutriglow Gold Kesar Facial Kit (40% off MRP)" loading="lazy"><span class="price-tag">₹150/Kit</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Gold Kesar Facial Kit (40% off MRP)</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Gold%20Kesar%20Facial%20Kit%20%2840%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:3">
         <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359281033/SR/ZU/XX/147448395/whatsapp-image-2023-11-03-at-10-40-07-am-1-500x500.jpeg" alt="Nutriglow Charcoal Facial Kit" loading="lazy"><span class="price-tag">₹700/Kit</span></div>
         <div class="prod-body">
           <div class="brand-tag">Nutriglow</div>
-          <h4>Charcoal Facial Kit</h4>
+          <h4>Nutriglow Charcoal Facial Kit</h4>
           <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Charcoal%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
-      <div class="prod-card fade-up stagger" style="--i:2">
+      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:4">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588512/LZ/AN/GW/147448395/nutriglow-naturals-coffee-facial-kit-500x500.jpg" alt="Nutriglow Coffee Facial Kit" loading="lazy"><span class="price-tag">₹700/Kit</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Coffee Facial Kit</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Coffee%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:5">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359584350/SI/NO/YL/147448395/nutriglow-vitamin-c-lightening-scrub-500x500.jpg" alt="Nutriglow Vitamin C Lightening Scrub" loading="lazy"><span class="price-tag">₹275/Tube</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Vitamin C Lightening Scrub</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Vitamin%20C%20Lightening%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:6">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586249/EI/ZL/QF/147448395/aroma-charcoal-oil-check-scrub-500x500.jpg" alt="Aroma Charcoal Oil Check Scrub" loading="lazy"><span class="price-tag">₹295/Tube</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Charcoal Oil Check Scrub</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Charcoal%20Oil%20Check%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:7">
         <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586985/NL/ZD/XG/147448395/aroma-leafs-papaya-facial-scrub-500x500.jpg" alt="Aroma Leafs Papaya Facial Scrub" loading="lazy"><span class="price-tag">₹425/Jar</span></div>
         <div class="prod-body">
           <div class="brand-tag">Aroma</div>
-          <h4>Leafs Papaya Facial Scrub</h4>
+          <h4>Aroma Leafs Papaya Facial Scrub</h4>
           <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Leafs%20Papaya%20Facial%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
-      <div class="prod-card fade-up stagger" style="--i:3">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587265/ZQ/DC/IB/147448395/aroma-ubtan-professional-tan-control-fairness-bleach-cream-500x500.jpg" alt="Aroma Ubtan Tan Control Bleach Cream" loading="lazy"><span class="price-tag">₹325/Box</span></div>
+      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:0">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589761/FN/AP/QL/147448395/aroma-leafs-fresh-fruit-facial-scrub-500x500.jpg" alt="Aroma Leafs Fresh Fruit Facial Scrub" loading="lazy"><span class="price-tag">₹350/Jar</span></div>
         <div class="prod-body">
           <div class="brand-tag">Aroma</div>
-          <h4>Ubtan Tan Control Bleach Cream</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Ubtan%20Tan%20Control%20Bleach%20Cream%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+          <h4>Aroma Leafs Fresh Fruit Facial Scrub</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Leafs%20Fresh%20Fruit%20Facial%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
-      <div class="prod-card fade-up stagger" style="--i:4">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583586/CD/LO/GE/147448395/nutriglow-anti-pollution-suncreen-50-500x500.jpeg" alt="SPF 50 Anti-Pollution Sunscreen" loading="lazy"><span class="price-tag">₹425/Pc</span></div>
+      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:1">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587133/KB/BV/TE/147448395/aroma-fresh-apricot-facial-scrub-500x500.jpg" alt="Aroma Fresh Apricot Facial Scrub" loading="lazy"><span class="price-tag">₹350/Piece</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Fresh Apricot Facial Scrub</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Fresh%20Apricot%20Facial%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:2">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589207/NX/XY/MB/147448395/nutriglow-anti-pigmentation-bleach-500x500.jpg" alt="Nutriglow Anti Pigmentation Bleach" loading="lazy"><span class="price-tag">₹125/Pack</span></div>
         <div class="prod-body">
           <div class="brand-tag">Nutriglow</div>
-          <h4>SPF 50 Anti-Pollution Sunscreen</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20SPF%2050%20Anti-Pollution%20Sunscreen%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+          <h4>Nutriglow Anti Pigmentation Bleach</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Anti%20Pigmentation%20Bleach%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
-      <div class="prod-card fade-up stagger" style="--i:5">
+      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:3">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359581666/JL/VC/OS/147448395/nutriglow-de-tan-dullness-removal-bleach-500x500.jpg" alt="Nutriglow De Tan Dullness Removal Bleach" loading="lazy"><span class="price-tag">₹125/Pack</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow De Tan Dullness Removal Bleach</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20De%20Tan%20Dullness%20Removal%20Bleach%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:4">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587265/ZQ/DC/IB/147448395/aroma-ubtan-professional-tan-control-fairness-bleach-cream-500x500.jpg" alt="Aroma Ubtan Tan Control Fairness Bleach Cream" loading="lazy"><span class="price-tag">₹325/Box</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Ubtan Tan Control Fairness Bleach Cream</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Ubtan%20Tan%20Control%20Fairness%20Bleach%20Cream%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:5">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588385/GW/BJ/SG/147448395/nutriglow-age-repair-tightening-bleach-500x500.jpg" alt="Nutriglow Age Repair Tightening Bleach" loading="lazy"><span class="price-tag">₹125/Pack</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Age Repair Tightening Bleach</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Age%20Repair%20Tightening%20Bleach%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="sunscreen" style="--i:6">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583586/CD/LO/GE/147448395/nutriglow-anti-pollution-suncreen-50-500x500.jpeg" alt="SPF 50 Nutriglow Anti Pollution Sunscreen" loading="lazy"><span class="price-tag">₹425/Piece</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>SPF 50 Nutriglow Anti Pollution Sunscreen</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20SPF%2050%20Nutriglow%20Anti%20Pollution%20Sunscreen%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="sunscreen" style="--i:7">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586093/OX/AI/CW/147448395/aroma-sunscreen-lotion-spf-30-500x500.jpg" alt="Aroma Sunscreen Lotion SPF 30" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Sunscreen Lotion SPF 30</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Sunscreen%20Lotion%20SPF%2030%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="sunscreen" style="--i:0">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359590190/US/QE/EN/147448395/aroma-suncreen-lotion-spf-50-500x500.jpg" alt="Aroma Sunscreen Lotion SPF 50" loading="lazy"><span class="price-tag">₹395/Tube</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Sunscreen Lotion SPF 50</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Sunscreen%20Lotion%20SPF%2050%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facewash" style="--i:1">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583170/FV/DB/JD/147448395/aroma-oil-control-face-wash-500x500.jpg" alt="Aroma Oil Control Face Wash" loading="lazy"><span class="price-tag">₹225/Tube</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Oil Control Face Wash</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Oil%20Control%20Face%20Wash%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facewash" style="--i:2">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359582814/TZ/OG/MK/147448395/aroma-age-control-face-wash-500x500.jpg" alt="Aroma Age Control Face Wash" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Age Control Face Wash</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Age%20Control%20Face%20Wash%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="facewash" style="--i:3">
         <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359582971/AZ/CZ/TI/147448395/aroma-perfect-glow-face-wash-500x500.jpg" alt="Aroma Perfect Glow Face Wash" loading="lazy"><span class="price-tag">₹225/Tube</span></div>
         <div class="prod-body">
           <div class="brand-tag">Aroma</div>
-          <h4>Perfect Glow Face Wash</h4>
+          <h4>Aroma Perfect Glow Face Wash</h4>
           <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Perfect%20Glow%20Face%20Wash%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
-      <div class="prod-card fade-up stagger" style="--i:6">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589516/MW/RL/GR/147448395/kiddy-soft-cotton-pants-diaper-500x500.jpg" alt="Kiddy Soft Cotton Pants Diaper" loading="lazy"><span class="price-tag">₹120/Pack</span></div>
+      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:4">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589516/MW/RL/GR/147448395/kiddy-soft-cotton-pants-diaper-500x500.jpg" alt="Kiddy Soft Cotton Pants Diaper (25% off MRP)" loading="lazy"><span class="price-tag">₹120/Pack</span></div>
         <div class="prod-body">
           <div class="brand-tag">Kiddy Soft</div>
-          <h4>Cotton Pants Diaper</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Kiddy%20Soft%20Cotton%20Pants%20Diaper%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+          <h4>Kiddy Soft Cotton Pants Diaper (25% off MRP)</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Kiddy%20Soft%20Cotton%20Pants%20Diaper%20%2825%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
-      <div class="prod-card fade-up stagger" style="--i:7">
+      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:5">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/ANDROID/Default/2023/11/362142484/VM/JY/JE/147448395/product-jpeg-500x500.jpg" alt="Kiddle Care Baby Pant Diaper (25% off MRP)" loading="lazy"><span class="price-tag">₹11/Piece</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Kiddle Care</div>
+          <h4>Kiddle Care Baby Pant Diaper (25% off MRP)</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Kiddle%20Care%20Baby%20Pant%20Diaper%20%2825%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:6">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/357929325/UB/ID/KQ/147448395/all-diapers-500x500.jpg" alt="All Diapers (Mixed Sizes)" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Multiple Brands</div>
+          <h4>All Diapers (Mixed Sizes)</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20All%20Diapers%20%28Mixed%20Sizes%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:7">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/ANDROID/Default/2023/11/362997440/WK/IW/WQ/147448395/product-jpeg-500x500.jpg" alt="Adult Diaper L10 (50% off MRP)" loading="lazy"><span class="price-tag">₹599/Pack</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Multiple Brands</div>
+          <h4>Adult Diaper L10 (50% off MRP)</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Adult%20Diaper%20L10%20%2850%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:0">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359280780/DF/RZ/UG/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-500x500.jpeg" alt="Nutriglow Color Protect Spa" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Color Protect Spa</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Color%20Protect%20Spa%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:1">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359278973/TW/AF/EA/147448395/whatsapp-image-2023-11-03-at-10-40-05-am-500x500.jpeg" alt="Nutriglow Keratin Hair Spa" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Keratin Hair Spa</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Keratin%20Hair%20Spa%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:2">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359278924/RX/RJ/ZH/147448395/whatsapp-image-2023-11-03-at-10-40-05-am-1-500x500.jpeg" alt="Nutriglow Protein Hair Spa" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Protein Hair Spa</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Protein%20Hair%20Spa%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:3">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359280448/TV/OK/VI/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-1-500x500.jpeg" alt="Nutriglow Biotin Hair Spa Cream" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Biotin Hair Spa Cream</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Biotin%20Hair%20Spa%20Cream%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="serum" style="--i:4">
         <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588120/XZ/RA/DB/147448395/nutigolw-age-repair-tightening-serum-500x500.jpg" alt="Nutriglow Age Repair Tightening Serum" loading="lazy"><span class="price-tag">₹700/Box</span></div>
         <div class="prod-body">
           <div class="brand-tag">Nutriglow</div>
-          <h4>Age Repair Tightening Serum</h4>
+          <h4>Nutriglow Age Repair Tightening Serum</h4>
           <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Age%20Repair%20Tightening%20Serum%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="serum" style="--i:5">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359581192/JO/IU/EM/147448395/nutri-anti-pigmentation-serum-500x500.jpg" alt="Nutriglow Anti Pigmentation Serum" loading="lazy"><span class="price-tag">₹700/Box</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Nutriglow</div>
+          <h4>Nutriglow Anti Pigmentation Serum</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Anti%20Pigmentation%20Serum%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="creams" style="--i:6">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586724/SP/LL/WW/147448395/spf-aroma-leafs-revitalizing-day-cream-500x500.jpg" alt="Aroma Perfect Glow Skin Whitening Cream" loading="lazy"><span class="price-tag">₹425/Box</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">Aroma</div>
+          <h4>Aroma Perfect Glow Skin Whitening Cream</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Perfect%20Glow%20Skin%20Whitening%20Cream%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
+        </div>
+      </div>
+      <div class="prod-card fade-up stagger" data-cat="creams" style="--i:7">
+        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587979/WR/FS/FM/147448395/dr-vegan-aloe-vera-gel-500x500.jpg" alt="DR Vegan Aloe Vera Gel" loading="lazy"><span class="price-tag">₹99/Piece</span></div>
+        <div class="prod-body">
+          <div class="brand-tag">DR Vegan</div>
+          <h4>DR Vegan Aloe Vera Gel</h4>
+          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20DR%20Vegan%20Aloe%20Vera%20Gel%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
         </div>
       </div>
     </div>
@@ -956,6 +1181,18 @@
 
 <script>
   // Enquiry form -> WhatsApp handoff
+  // Product catalogue filter
+  function setFilter(key){
+    document.querySelectorAll('.filter-btn').forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-filter') === key);
+    });
+    document.querySelectorAll('#prodGrid .prod-card').forEach(function(card){
+      var match = (key === 'all' || card.getAttribute('data-cat') === key);
+      card.classList.toggle('hidden', !match);
+      if(match){ card.classList.add('in'); }
+    });
+  }
+
   function handleEnquiry(e){
     e.preventDefault();
     var name = document.getElementById('cf-name').value.trim();
