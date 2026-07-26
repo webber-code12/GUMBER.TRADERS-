@@ -7,157 +7,157 @@
 <meta name="description" content="Gumber Traders, established 2002, Jalandhar — direct wholesale supplier of Nutriglow & Aroma facial kits, scrubs, sunscreens, bleach creams, hair spa and baby diapers to retailers across Punjab.">
 <style>
   :root{
-    --ink:#241318;
-    --plum:#5c1f30;
-    --plum-dark:#3d1520;
-    --plum-light:#7a2c40;
-    --gold:#b6863c;
-    --gold-light:#d9b06a;
-    --cream:#f8f2e9;
-    --cream-deep:#efe4d3;
-    --paper:#ffffff;
-    --muted:#7a6a63;
-    --whatsapp:#2fae60;
+    --ink:#241318; --plum:#5c1f30; --plum-dark:#3d1520; --plum-light:#7a2c40;
+    --gold:#b6863c; --gold-light:#d9b06a; --cream:#f8f2e9; --cream-deep:#efe4d3;
+    --paper:#ffffff; --muted:#7a6a63; --whatsapp:#2fae60;
     --font-display:"Big Caslon","Didot","Iowan Old Style","Palatino Linotype",Georgia,serif;
     --font-body:"Century Gothic","Futura","Avenir Next",Avenir,"Segoe UI",sans-serif;
-    --radius:18px;
-    --shadow-soft:0 12px 40px rgba(36,19,24,.10);
-    --shadow-gold:0 10px 30px rgba(182,134,60,.25);
+    --radius:18px; --shadow-soft:0 12px 40px rgba(36,19,24,.10); --shadow-gold:0 10px 30px rgba(182,134,60,.25);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.6;}
+  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden;}
   h1,h2,h3{font-family:var(--font-display);font-weight:400;color:var(--plum-dark);margin:0;}
   a{text-decoration:none;color:inherit;}
-  img{max-width:100%;display:block;}
   .container{max-width:1160px;margin:0 auto;padding:0 24px;}
-  .eyebrow{font-family:var(--font-body);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--gold);font-weight:600;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--gold);font-weight:600;}
 
-  /* reveal-on-scroll */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);}
   .reveal.in{opacity:1;transform:translateY(0);}
+  .stagger.in > *{transition-delay:calc(var(--i,0) * 70ms);}
 
-  /* announcement bar */
-  .topbar{background:var(--plum-dark);color:var(--cream-deep);font-size:.82rem;text-align:center;padding:8px 16px;letter-spacing:.03em;}
+  .topbar{background:var(--plum-dark);color:var(--cream-deep);font-size:.82rem;text-align:center;padding:8px 16px;}
   .topbar strong{color:var(--gold-light);}
 
-  /* nav */
-  header.nav{background:var(--paper);border-bottom:1px solid rgba(36,19,24,.08);position:sticky;top:0;z-index:40;}
+  header.nav{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(36,19,24,.08);position:sticky;top:0;z-index:40;}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto;}
-  .brand{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.02em;color:var(--plum);}
+  .brand{font-family:var(--font-display);font-size:1.5rem;color:var(--plum);}
   .brand span{color:var(--gold);}
-  .nav-links{display:flex;gap:32px;font-size:.9rem;font-weight:600;letter-spacing:.02em;}
+  .nav-links{display:flex;gap:32px;font-size:.9rem;font-weight:600;}
   .nav-links a{position:relative;padding-bottom:4px;}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .3s ease;}
   .nav-links a:hover::after{width:100%;}
   .nav-cta{display:flex;gap:10px;}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.88rem;letter-spacing:.02em;transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;border:none;}
-  .btn:hover{transform:translateY(-2px);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.88rem;transition:transform .3s cubic-bezier(.2,.8,.3,1.4), box-shadow .3s ease;cursor:pointer;border:none;position:relative;overflow:hidden;}
+  .btn:hover{transform:translateY(-3px) scale(1.02);}
   .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--plum-dark);box-shadow:var(--shadow-gold);}
   .btn-outline{background:transparent;border:1.5px solid var(--plum);color:var(--plum);}
   .btn-whatsapp{background:var(--whatsapp);color:#fff;}
   .btn-sm{padding:9px 16px;font-size:.8rem;}
   @media (max-width:860px){ .nav-links{display:none;} }
 
-  /* hero */
-  .hero{padding:88px 0 70px;position:relative;overflow:hidden;}
-  .hero::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(182,134,60,.18),transparent 70%);}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
-  .hero h1{font-size:3.1rem;line-height:1.12;margin:18px 0 22px;}
+  /* 3D hero */
+  .hero{position:relative;padding:70px 0 60px;overflow:hidden;}
+  #hero-canvas{position:absolute;top:0;right:0;width:56%;height:100%;pointer-events:none;opacity:.9;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:2;}
+  .hero h1{font-size:3.05rem;line-height:1.12;margin:18px 0 22px;}
   .hero h1 em{font-style:normal;color:var(--gold);}
-  .hero p.lead{font-size:1.12rem;color:var(--muted);max-width:480px;margin-bottom:32px;}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-  .trust-strip{display:flex;gap:36px;flex-wrap:wrap;}
+  .hero p.lead{font-size:1.1rem;color:var(--muted);max-width:470px;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .trust-strip{display:flex;gap:34px;flex-wrap:wrap;}
   .trust-item{font-size:.85rem;color:var(--plum-dark);font-weight:700;}
-  .trust-item small{display:block;font-weight:400;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;}
-  .hero-visual{aspect-ratio:4/5;border-radius:28px;background:linear-gradient(155deg,var(--plum),var(--plum-dark));position:relative;box-shadow:var(--shadow-soft);display:flex;align-items:center;justify-content:center;color:rgba(248,242,233,.55);font-size:.9rem;letter-spacing:.05em;}
-  .hero-visual::after{content:"";position:absolute;inset:14px;border:1px solid rgba(217,176,106,.4);border-radius:20px;}
-  .badge-float{position:absolute;bottom:-18px;left:-18px;background:var(--paper);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-soft);animation:float 4.5s ease-in-out infinite;}
-  .badge-float b{display:block;font-family:var(--font-display);font-size:1.4rem;color:var(--plum);}
-  .badge-float span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+  .trust-item b{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--gold);}
+  .trust-item small{display:block;font-weight:400;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;}
+  .badge-float{background:var(--paper);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-soft);animation:float 4.5s ease-in-out infinite;display:inline-block;}
+  .badge-float b{display:block;font-family:var(--font-display);font-size:1.3rem;color:var(--plum);}
+  .badge-float span{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;}
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} .hero h1{font-size:2.3rem;} .hero-visual{order:-1;aspect-ratio:16/10;} }
+  @media (max-width:860px){ #hero-canvas{display:none;} .hero h1{font-size:2.2rem;} }
 
-  section{padding:76px 0;}
-  .section-head{max-width:640px;margin-bottom:44px;}
-  .section-head h2{font-size:2.2rem;margin-top:10px;}
+  section{padding:70px 0;}
+  .section-head{max-width:640px;margin-bottom:40px;}
+  .section-head h2{font-size:2.1rem;margin-top:8px;}
 
-  /* about */
   .about{background:var(--paper);}
-  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
-  .about-visual{aspect-ratio:1;border-radius:24px;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;}
-  .stat-row{display:flex;gap:40px;margin-top:28px;}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;}
+  .icon-panel{aspect-ratio:1;border-radius:24px;background:linear-gradient(155deg,var(--cream-deep),var(--cream));display:flex;align-items:center;justify-content:center;}
+  .icon-panel svg{width:55%;height:55%;}
+  .stat-row{display:flex;gap:40px;margin-top:26px;}
   .stat b{font-family:var(--font-display);font-size:2rem;color:var(--gold);display:block;}
-  .stat span{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
-  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} .about-visual{order:-1;} }
+  .stat span{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
 
-  /* why choose */
-  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .why-card{background:var(--paper);border-radius:var(--radius);padding:30px 24px;box-shadow:var(--shadow-soft);transition:transform .3s ease;}
-  .why-card:hover{transform:translateY(-6px);}
-  .why-icon{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));margin-bottom:18px;}
-  .why-card h3{font-size:1.15rem;margin-bottom:8px;}
-  .why-card p{font-size:.9rem;color:var(--muted);margin:0;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .why-card{background:var(--paper);border-radius:var(--radius);padding:28px 22px;box-shadow:var(--shadow-soft);transition:transform .35s cubic-bezier(.2,.8,.3,1.3), box-shadow .35s ease;}
+  .why-card:hover{transform:translateY(-8px) rotateX(4deg);box-shadow:0 20px 46px rgba(36,19,24,.16);}
+  .why-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));margin-bottom:16px;}
+  .why-card h3{font-size:1.1rem;margin-bottom:6px;}
+  .why-card p{font-size:.88rem;color:var(--muted);margin:0;}
   @media (max-width:960px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .why-grid{grid-template-columns:1fr;} }
 
-  /* categories */
-  .categories{background:var(--plum-dark);color:var(--cream);}
+  .categories{background:var(--plum-dark);color:var(--cream);perspective:1200px;}
   .categories .section-head h2{color:var(--cream);}
   .categories .eyebrow{color:var(--gold-light);}
-  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .cat-card{background:rgba(248,242,233,.06);border:1px solid rgba(217,176,106,.25);border-radius:var(--radius);padding:26px 20px;transition:background .3s ease, transform .3s ease;}
-  .cat-card:hover{background:rgba(217,176,106,.14);transform:translateY(-4px);}
-  .cat-card b{font-family:var(--font-display);font-size:1.3rem;}
-  .cat-card span{display:block;font-size:.78rem;color:var(--gold-light);margin-top:6px;letter-spacing:.04em;}
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .cat-card{background:rgba(248,242,233,.06);border:1px solid rgba(217,176,106,.25);border-radius:var(--radius);padding:22px 18px;transition:transform .25s ease, background .3s ease;cursor:pointer;transform-style:preserve-3d;}
+  .cat-card:hover{background:rgba(217,176,106,.14);}
+  .cat-card svg{width:34px;height:34px;margin-bottom:12px;}
+  .cat-card b{display:block;font-family:var(--font-display);font-size:1.15rem;}
+  .cat-card span{display:block;font-size:.75rem;color:var(--gold-light);margin-top:4px;letter-spacing:.03em;}
   @media (max-width:960px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .cat-grid{grid-template-columns:1fr;} }
 
-  /* products */
-  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .prod-card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);transition:transform .3s ease, box-shadow .3s ease;}
-  .prod-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(36,19,24,.16);}
-  .prod-img{aspect-ratio:1;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.78rem;}
-  .prod-body{padding:18px 20px 22px;}
-  .prod-brand{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
-  .prod-body h3{font-size:1rem;margin:6px 0 10px;line-height:1.35;}
-  .prod-price{font-family:var(--font-display);color:var(--plum);font-size:1.15rem;}
+  .products-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+  .chip{font-size:.78rem;font-weight:700;padding:8px 16px;border-radius:999px;border:1px solid rgba(92,31,48,.25);color:var(--plum);transition:all .25s ease;}
+  .chip:hover, .chip.active{background:var(--plum);color:var(--cream);}
+  .prod-section{margin-bottom:48px;}
+  .prod-section h3{font-size:1.4rem;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .prod-section h3 svg{width:26px;height:26px;}
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;perspective:1000px;}
+  .prod-card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);transition:box-shadow .3s ease;transform-style:preserve-3d;will-change:transform;}
+  .prod-card:hover{box-shadow:0 20px 48px rgba(36,19,24,.18);}
+  .prod-img{aspect-ratio:1;background:linear-gradient(155deg,var(--cream-deep),var(--cream));display:flex;align-items:center;justify-content:center;}
+  .prod-img svg{width:44%;height:44%;}
+  .prod-body{padding:16px 18px 20px;}
+  .prod-brand{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);font-weight:700;}
+  .prod-body h4{font-family:var(--font-body);font-weight:700;font-size:.92rem;margin:5px 0 9px;line-height:1.35;color:var(--ink);}
+  .prod-price{font-family:var(--font-display);color:var(--plum);font-size:1.1rem;}
   @media (max-width:960px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .prod-grid{grid-template-columns:1fr;} }
 
-  /* testimonials */
   .testi{background:var(--cream-deep);}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  .testi-card{background:var(--paper);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-soft);}
-  .testi-card p{font-size:.95rem;color:var(--ink);margin:0 0 18px;}
-  .testi-card footer{font-size:.82rem;color:var(--muted);font-weight:700;}
-  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px;}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .testi-card{background:var(--paper);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-soft);}
+  .testi-card p{font-size:.94rem;margin:0 0 16px;}
+  .testi-card footer{font-size:.8rem;color:var(--muted);font-weight:700;}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px;}
   @media (max-width:860px){ .testi-grid{grid-template-columns:1fr;} }
 
-  /* location + contact */
   .reach{background:var(--paper);}
   .reach-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
-  .info-line{display:flex;gap:14px;margin-bottom:18px;font-size:.95rem;}
+  .info-line{display:flex;gap:14px;margin-bottom:16px;font-size:.94rem;}
   .info-line b{color:var(--plum-dark);}
-  .map-box{aspect-ratio:4/3;border-radius:var(--radius);background:var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;margin-top:24px;}
-  form{display:grid;gap:16px;background:var(--cream);padding:32px;border-radius:var(--radius);box-shadow:var(--shadow-soft);}
-  input,textarea,select{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(36,19,24,.15);font-family:var(--font-body);font-size:.92rem;background:var(--paper);}
-  textarea{resize:vertical;min-height:100px;}
-  label{font-size:.8rem;font-weight:700;color:var(--plum-dark);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;display:block;}
+  .map-box{aspect-ratio:4/3;border-radius:var(--radius);background:var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;margin-top:22px;}
+  form{display:grid;gap:16px;background:var(--cream);padding:30px;border-radius:var(--radius);box-shadow:var(--shadow-soft);}
+  input,textarea,select{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(36,19,24,.15);font-family:var(--font-body);font-size:.9rem;background:var(--paper);}
+  label{font-size:.78rem;font-weight:700;color:var(--plum-dark);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;display:block;}
   @media (max-width:860px){ .reach-grid{grid-template-columns:1fr;} }
 
-  footer.site{background:var(--plum-dark);color:rgba(248,242,233,.7);padding:40px 0 100px;font-size:.85rem;}
+  footer.site{background:var(--plum-dark);color:rgba(248,242,233,.7);padding:36px 0 100px;font-size:.85rem;}
   .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-  .footer-inner a:hover{color:var(--gold-light);}
 
-  /* sticky mobile CTA bar */
   .sticky-cta{position:fixed;left:0;right:0;bottom:0;display:none;gap:10px;padding:12px 16px;background:var(--paper);box-shadow:0 -8px 24px rgba(36,19,24,.14);z-index:50;transform:translateY(120%);transition:transform .4s ease;}
   .sticky-cta.show{transform:translateY(0);}
   .sticky-cta a{flex:1;justify-content:center;}
-  @media (max-width:860px){ .sticky-cta{display:flex;} body{padding-bottom:0;} }
+  @media (max-width:860px){ .sticky-cta{display:flex;} }
 </style>
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="ic-kit" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="26" rx="3" fill="none" stroke="var(--plum)" stroke-width="2"/><path d="M16 14V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4" fill="none" stroke="var(--gold)" stroke-width="2"/><circle cx="24" cy="27" r="5" fill="none" stroke="var(--gold)" stroke-width="2"/></symbol>
+<symbol id="ic-scrub" viewBox="0 0 48 48"><path d="M14 18h20v20a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18z" fill="none" stroke="var(--plum)" stroke-width="2"/><rect x="17" y="10" width="14" height="8" rx="2" fill="none" stroke="var(--gold)" stroke-width="2"/></symbol>
+<symbol id="ic-bleach" viewBox="0 0 48 48"><rect x="18" y="6" width="12" height="8" rx="1" fill="none" stroke="var(--gold)" stroke-width="2"/><path d="M16 14h16l2 26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4z" fill="none" stroke="var(--plum)" stroke-width="2"/></symbol>
+<symbol id="ic-sun" viewBox="0 0 48 48"><circle cx="24" cy="16" r="6" fill="none" stroke="var(--gold)" stroke-width="2"/><path d="M24 4v3M24 25v3M11 16h3M34 16h3M15 7l2 2M31 7l-2 2" stroke="var(--gold)" stroke-width="2"/><rect x="16" y="22" width="16" height="20" rx="4" fill="none" stroke="var(--plum)" stroke-width="2"/></symbol>
+<symbol id="ic-wash" viewBox="0 0 48 48"><path d="M20 6h8v8l4 4v22a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V18l4-4z" fill="none" stroke="var(--plum)" stroke-width="2"/><path d="M17 30h14" stroke="var(--gold)" stroke-width="2"/></symbol>
+<symbol id="ic-diaper" viewBox="0 0 48 48"><path d="M8 16h32c0 12-6 22-16 22S8 28 8 16z" fill="none" stroke="var(--plum)" stroke-width="2"/><circle cx="17" cy="17" r="2" fill="var(--gold)"/><circle cx="31" cy="17" r="2" fill="var(--gold)"/></symbol>
+<symbol id="ic-spa" viewBox="0 0 48 48"><path d="M15 20a9 9 0 0 1 18 0c0 8-9 10-9 18-0-8-9-10-9-18z" fill="none" stroke="var(--plum)" stroke-width="2"/><path d="M24 11c2 3 2 5 0 7-2-2-2-4 0-7z" fill="var(--gold)"/></symbol>
+<symbol id="ic-serum" viewBox="0 0 48 48"><path d="M20 6h8v10l6 20a3 3 0 0 1-3 4H17a3 3 0 0 1-3-4l6-20z" fill="none" stroke="var(--plum)" stroke-width="2"/><circle cx="24" cy="34" r="2.5" fill="var(--gold)"/></symbol>
+<symbol id="ic-glow" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="none" stroke="var(--gold)" stroke-width="2"/><path d="M24 10v6M24 32v6M10 24h6M32 24h6" stroke="var(--gold)" stroke-width="2"/></symbol>
+</defs>
+</svg>
 
 <div class="topbar">Est. 2002 · <strong>Direct Wholesale Supplier</strong> — Skip the Marketplace Markup, Buy Straight From Us</div>
 
@@ -166,7 +166,8 @@
     <div class="brand">GUMBER <span>TRADERS</span></div>
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#categories">Products</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -178,6 +179,7 @@
 </header>
 
 <section class="hero">
+  <canvas id="hero-canvas"></canvas>
   <div class="container hero-grid">
     <div>
       <p class="eyebrow">Wholesaler &amp; Distributor · Jalandhar, Punjab</p>
@@ -188,14 +190,13 @@
         <a class="btn btn-outline" href="tel:+919914074261">Call +91 99140 74261</a>
       </div>
       <div class="trust-strip">
-        <div class="trust-item">2002<small>Established</small></div>
-        <div class="trust-item">8<small>Product Categories</small></div>
-        <div class="trust-item">36+<small>SKUs Stocked</small></div>
+        <div class="trust-item"><b class="counter" data-to="2002" data-nocomma="1">0</b><small>Established</small></div>
+        <div class="trust-item"><b class="counter" data-to="8">0</b><small>Categories</small></div>
+        <div class="trust-item"><b class="counter" data-to="36">0</b><small>SKUs Stocked</small></div>
         <div class="trust-item">GST<small>Registered Firm</small></div>
       </div>
     </div>
-    <div style="position:relative;">
-      <div class="hero-visual">[ product range photograph ]</div>
+    <div>
       <div class="badge-float"><b>K. Kumar</b><span>Proprietor since 2002</span></div>
     </div>
   </div>
@@ -203,7 +204,7 @@
 
 <section class="about" id="about">
   <div class="container about-grid">
-    <div class="about-visual reveal">[ warehouse / dispatch photograph ]</div>
+    <div class="icon-panel reveal"><svg viewBox="0 0 48 48"><use href="#ic-glow"/></svg></div>
     <div class="reveal">
       <p class="eyebrow">About Us</p>
       <h2>Two decades of moving genuine stock, fast.</h2>
@@ -219,70 +220,41 @@
 
 <section class="why">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Why Retailers Choose Us</p>
-      <h2>Built for people who buy in bulk.</h2>
-    </div>
+    <div class="section-head reveal"><p class="eyebrow">Why Retailers Choose Us</p><h2>Built for people who buy in bulk.</h2></div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Direct Pricing</h3><p>No marketplace commission stacked into your rate — order straight from the source.</p></div>
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Genuine Brands</h3><p>Authorized stock of Nutriglow, Aroma and other established skincare brands.</p></div>
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Bulk-Friendly MOQs</h3><p>Order by the box or the case — pricing that scales for shop owners and distributors.</p></div>
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Fast Dispatch</h3><p>Local Jalandhar warehouse means quicker turnaround than most upcountry suppliers.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Direct Pricing</h3><p>No marketplace commission stacked into your rate.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Genuine Brands</h3><p>Authorized Nutriglow, Aroma and Kiddy Soft stock.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Bulk-Friendly MOQs</h3><p>Order by the box or the case, scaled for shop owners.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Fast Dispatch</h3><p>Local Jalandhar warehouse means quicker turnaround.</p></div>
     </div>
   </div>
 </section>
 
 <section class="categories" id="categories">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Product Categories</p>
-      <h2>Eight categories, 36+ products in stock.</h2>
-    </div>
-    <div class="cat-grid">
-      <div class="cat-card reveal"><b>Facial Kits</b><span>12 Products</span></div>
-      <div class="cat-card reveal"><b>Facial Scrubs</b><span>5 Products</span></div>
-      <div class="cat-card reveal"><b>Bleach Creams</b><span>4 Products</span></div>
-      <div class="cat-card reveal"><b>Sunscreen Lotions</b><span>3 Products</span></div>
-      <div class="cat-card reveal"><b>Face Wash</b><span>3 Products</span></div>
-      <div class="cat-card reveal"><b>Baby Diapers</b><span>3 Products</span></div>
-      <div class="cat-card reveal"><b>Hair Spa Creams</b><span>4 Products</span></div>
-      <div class="cat-card reveal"><b>Anti-Ageing Serums</b><span>2 Products</span></div>
-    </div>
+    <div class="section-head reveal"><p class="eyebrow">Product Categories</p><h2>Eight categories, 36 products in stock.</h2></div>
+    <div class="cat-grid" id="catGrid"></div>
   </div>
 </section>
 
-<section class="products">
+<section class="products" id="products">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Featured Products</p>
-      <h2>A few of our best-moving lines.</h2>
-    </div>
-    <div class="prod-grid">
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Anti Pigmentation Facial Kit</h3><div class="prod-price">₹300 / kit</div></div></div>
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Aroma</div><h3>Perfect Glow Skin Whitening Cream</h3><div class="prod-price">₹425 / box</div></div></div>
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Charcoal Facial Kit</h3><div class="prod-price">₹700 / kit</div></div></div>
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Aroma</div><h3>Sunscreen Lotion SPF 50</h3><div class="prod-price">₹395 / tube</div></div></div>
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Kiddy Soft</div><h3>Cotton Pants Diaper</h3><div class="prod-price">₹120 / pack</div></div></div>
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Age Repair Tightening Serum</h3><div class="prod-price">₹700 / box</div></div></div>
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Aroma</div><h3>Oil Control Face Wash</h3><div class="prod-price">₹225 / tube</div></div></div>
-      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Keratin Hair Spa</h3><div class="prod-price">Ask for price</div></div></div>
-    </div>
-    <div style="text-align:center;margin-top:40px;">
-      <a class="btn btn-gold" href="https://wa.me/919914074261" target="_blank" rel="noopener">See Full Catalogue on WhatsApp</a>
+    <div class="section-head reveal"><p class="eyebrow">Full Catalogue</p><h2>Every product we stock, by category.</h2></div>
+    <div class="products-nav" id="prodNav"></div>
+    <div id="prodSections"></div>
+    <div style="text-align:center;margin-top:20px;">
+      <a class="btn btn-gold" href="https://wa.me/919914074261" target="_blank" rel="noopener">Ask for Current Rate List on WhatsApp</a>
     </div>
   </div>
 </section>
 
 <section class="testi" id="testimonials">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Testimonials</p>
-      <h2>What retailers say about ordering with us.</h2>
-    </div>
+    <div class="section-head reveal"><p class="eyebrow">Testimonials</p><h2>What retailers say about ordering with us.</h2></div>
     <div class="testi-grid">
       <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Prices are noticeably better than what I was paying through the marketplace listing, and dispatch is quicker since they're local."</p><footer>— Retail Chemist, Jalandhar</footer></div>
       <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Been ordering facial kits and scrubs for our salon supply chain for over a year. Stock is always genuine Nutriglow."</p><footer>— Salon Supply Distributor, Punjab</footer></div>
-      <div class="testi-card reveal"><div class="stars">★★★★☆</div><p>"Good for bulk diaper orders — reasonable minimum quantities and they're easy to reach on WhatsApp for reorders."</p><footer>— General Store Owner, Jalandhar</footer></div>
+      <div class="testi-card reveal"><div class="stars">★★★★☆</div><p>"Good for bulk diaper orders — reasonable minimum quantities and easy to reach on WhatsApp for reorders."</p><footer>— General Store Owner, Jalandhar</footer></div>
     </div>
   </div>
 </section>
@@ -299,32 +271,16 @@
       <div class="map-box">[ map / directions embed ]</div>
     </div>
     <form class="reveal" onsubmit="return false;">
-      <div>
-        <label>Your Name</label>
-        <input type="text" placeholder="Full name" required>
-      </div>
-      <div>
-        <label>Phone Number</label>
-        <input type="tel" placeholder="10-digit mobile number" required>
-      </div>
-      <div>
-        <label>Interested In</label>
-        <select>
-          <option>Facial Kits</option>
-          <option>Facial Scrubs</option>
-          <option>Bleach Creams</option>
-          <option>Sunscreen Lotions</option>
-          <option>Face Wash</option>
-          <option>Baby Diapers</option>
-          <option>Hair Spa Creams</option>
-          <option>Anti-Ageing Serums</option>
-          <option>Full Catalogue</option>
+      <div><label>Your Name</label><input type="text" placeholder="Full name" required></div>
+      <div><label>Phone Number</label><input type="tel" placeholder="10-digit mobile number" required></div>
+      <div><label>Interested In</label>
+        <select id="interestSelect">
+          <option>Facial Kits</option><option>Facial Scrubs</option><option>Bleach Creams</option>
+          <option>Sunscreen Lotions</option><option>Face Wash</option><option>Baby Diapers</option>
+          <option>Hair Spa Creams</option><option>Anti-Ageing Serums</option><option>Full Catalogue</option>
         </select>
       </div>
-      <div>
-        <label>Message / Quantity Required</label>
-        <textarea placeholder="e.g. 5 boxes of facial kits, monthly reorder"></textarea>
-      </div>
+      <div><label>Message / Quantity Required</label><textarea placeholder="e.g. 5 boxes of facial kits, monthly reorder"></textarea></div>
       <button type="submit" class="btn btn-gold" style="justify-content:center;">Request a Quote</button>
     </form>
   </div>
@@ -346,20 +302,195 @@
   <a class="btn btn-whatsapp" href="https://wa.me/919914074261" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
+<script src="three.min.js"></script>
 <script>
-  // scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
+/* ---------- product data (full catalogue, 36 SKUs) ---------- */
+const CATALOGUE = {
+  "Facial Kits": { icon:"ic-kit", items:[
+    ["Nutrigolw","Anti Pigmentation Facial Kit","₹300/Kit"],
+    ["Nutriglow","De Tan Dullness Removal Facial Kit","₹250/Kit"],
+    ["Nutriglow","Gold Kesar Facial Kit (40% less MRP)","₹150/Kit"],
+    ["Nutriglow","Charcoal Facial Kit","₹700/Kit"],
+    ["Nutriglow","Coffee Facial Kit","₹700/Kit"],
+    ["Nutriglow","Skin Whitening Facial Cream","₹150/Kit"],
+    ["Nutriglow","Green Tea Facial Kit","₹700/Piece"],
+    ["Nutriglow","Papaya Face Kit","₹150/Kit"],
+    ["Nutriglow","Papaya Fruit Facial Kit","₹700/Kit"],
+    ["Nutriglow","Diamond Radiance Facial Kit","₹150/Kit"],
+    ["Nutriglow","Aloe Vera Cucumber Facial Kit","₹700/Kit"],
+    ["—","One-Time-Use Facial Kit (40% less MRP)","₹150/Piece"],
+  ]},
+  "Facial Scrubs": { icon:"ic-scrub", items:[
+    ["Nutriglow","Vitamin C Lightening Scrub","₹275/Tube"],
+    ["Aroma","Charcoal Oil Check Scrub","₹295/Tube"],
+    ["Aroma","Leafs Papaya Facial Scrub","₹425/Jar"],
+    ["Aroma","Leafs Fresh Fruit Facial Scrub","₹350/Jar"],
+    ["Aroma","Fresh Apricot Facial Scrub","₹350/Piece"],
+  ]},
+  "Bleach Creams": { icon:"ic-bleach", items:[
+    ["Nutriglow","Anti Pigmentation Bleach","₹125/Pack"],
+    ["Nutriglow","De Tan Dullness Removal Bleach","₹125/Pack"],
+    ["Aroma","Ubtan Professional Tan Control Fairness Bleach","₹325/Box"],
+    ["Nutriglow","Age Repair Tightening Bleach","₹125/Pack"],
+  ]},
+  "Sunscreen Lotions": { icon:"ic-sun", items:[
+    ["Nutriglow","SPF 50 Anti Pollution Sunscreen","₹425/Piece"],
+    ["Aroma","Sunscreen Lotion SPF 30","Ask price"],
+    ["Aroma","Sunscreen Lotion SPF 50","₹395/Tube"],
+  ]},
+  "Face Wash": { icon:"ic-wash", items:[
+    ["Aroma","Oil Control Face Wash","₹225/Tube"],
+    ["Aroma","Age Control Face Wash","Ask price"],
+    ["Aroma","Perfect Glow Face Wash","₹225/Tube"],
+  ]},
+  "Baby Diapers": { icon:"ic-diaper", items:[
+    ["Kiddy Soft","Cotton Pants Diaper (25% less MRP)","₹120/Pack"],
+    ["Kiddle Care","Baby Pant Diaper (25% less MRP)","₹11/Piece"],
+    ["—","All Diapers (mixed sizes)","Ask price"],
+  ]},
+  "Hair Spa Creams": { icon:"ic-spa", items:[
+    ["Nutriglow","Color Protect Spa","Ask price"],
+    ["Nutriglow","Keratin Hair Spa","Ask price"],
+    ["Nutriglow","Protein Hair Spa","Ask price"],
+    ["Nutriglow","Biotin Hair Spa Cream","Ask price"],
+  ]},
+  "Anti-Ageing Serums": { icon:"ic-serum", items:[
+    ["Nutriglow","Age Repair Tightening Serum","₹700/Box"],
+    ["Nutriglow","Anti Pigmentation Serum","₹700/Box"],
+  ]},
+};
 
-  // sticky mobile CTA appears after scrolling past hero
-  const stickyCta = document.getElementById('stickyCta');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 420) stickyCta.classList.add('show');
-    else stickyCta.classList.remove('show');
+/* render category grid */
+const catGrid = document.getElementById('catGrid');
+Object.entries(CATALOGUE).forEach(([name, data]) => {
+  const el = document.createElement('div');
+  el.className = 'cat-card reveal';
+  el.innerHTML = `<svg><use href="#${data.icon}"/></svg><b>${name}</b><span>${data.items.length} Products</span>`;
+  el.addEventListener('click', () => document.getElementById('sec-'+data.icon).scrollIntoView({behavior:'smooth', block:'start'}));
+  catGrid.appendChild(el);
+});
+
+/* render product nav chips + sections */
+const prodNav = document.getElementById('prodNav');
+const prodSections = document.getElementById('prodSections');
+Object.entries(CATALOGUE).forEach(([name, data]) => {
+  const chip = document.createElement('a');
+  chip.className = 'chip'; chip.href = '#sec-'+data.icon; chip.textContent = name;
+  prodNav.appendChild(chip);
+
+  const sec = document.createElement('div');
+  sec.className = 'prod-section'; sec.id = 'sec-'+data.icon;
+  const grid = data.items.map(([brand, item, price]) => `
+    <div class="prod-card reveal">
+      <div class="prod-img"><svg><use href="#${data.icon}"/></svg></div>
+      <div class="prod-body">
+        <div class="prod-brand">${brand}</div>
+        <h4>${item}</h4>
+        <div class="prod-price">${price}</div>
+      </div>
+    </div>`).join('');
+  sec.innerHTML = `<h3><svg><use href="#${data.icon}"/></svg>${name}</h3><div class="prod-grid">${grid}</div>`;
+  prodSections.appendChild(sec);
+});
+
+/* scroll reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* animated counters */
+document.querySelectorAll('.counter').forEach(el => {
+  const to = parseInt(el.dataset.to, 10);
+  const io2 = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        io2.unobserve(el);
+        let start = null; const dur = 1200;
+        function step(ts){ if(!start) start = ts; const p = Math.min((ts-start)/dur, 1);
+          el.textContent = Math.floor(p*to); if(p<1) requestAnimationFrame(step); else el.textContent = to; }
+        requestAnimationFrame(step);
+      }
+    });
+  }, {threshold:.5});
+  io2.observe(el);
+});
+
+/* tilt effect on product + why cards */
+document.querySelectorAll('.prod-card, .why-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-4px)`;
   });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+/* sticky mobile CTA */
+const stickyCta = document.getElementById('stickyCta');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 420) stickyCta.classList.add('show'); else stickyCta.classList.remove('show');
+});
+
+/* ---------- Three.js 3D hero ---------- */
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
+  const parent = canvas.parentElement;
+  let w = parent.clientWidth, h = parent.clientHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);
+  camera.position.set(0, 0, 9);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const geo = new THREE.IcosahedronGeometry(2.4, 1);
+  const mat = new THREE.MeshStandardMaterial({ color: 0xb6863c, metalness: 0.7, roughness: 0.25, flatShading: true });
+  const gem = new THREE.Mesh(geo, mat);
+  scene.add(gem);
+
+  const wireGeo = new THREE.IcosahedronGeometry(2.55, 1);
+  const wireMat = new THREE.MeshBasicMaterial({ color: 0xd9b06a, wireframe: true, transparent: true, opacity: 0.35 });
+  const wire = new THREE.Mesh(wireGeo, wireMat);
+  scene.add(wire);
+
+  const ambient = new THREE.AmbientLight(0xf8f2e9, 0.6);
+  scene.add(ambient);
+  const point = new THREE.PointLight(0xffffff, 1.4);
+  point.position.set(5, 5, 8);
+  scene.add(point);
+  const point2 = new THREE.PointLight(0x5c1f30, 0.8);
+  point2.position.set(-6, -3, 4);
+  scene.add(point2);
+
+  let mx = 0, my = 0;
+  window.addEventListener('mousemove', (e) => {
+    mx = (e.clientX / window.innerWidth - 0.5);
+    my = (e.clientY / window.innerHeight - 0.5);
+  });
+
+  function onResize(){
+    w = parent.clientWidth; h = parent.clientHeight;
+    camera.aspect = w/h; camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  }
+  window.addEventListener('resize', onResize);
+
+  function animate(){
+    requestAnimationFrame(animate);
+    gem.rotation.y += 0.003; gem.rotation.x += 0.0012;
+    wire.rotation.y -= 0.002; wire.rotation.x -= 0.001;
+    camera.position.x += (mx*2 - camera.position.x) * 0.03;
+    camera.position.y += (-my*1.2 - camera.position.y) * 0.03;
+    camera.lookAt(0,0,0);
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
 </script>
 
 </body>
