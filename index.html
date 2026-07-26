@@ -22,9 +22,14 @@
   .container{max-width:1160px;margin:0 auto;padding:0 24px;}
   .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--gold);font-weight:600;}
 
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1);transition-delay:calc(var(--i,0) * 60ms);}
   .reveal.in{opacity:1;transform:translateY(0);}
-  .stagger.in > *{transition-delay:calc(var(--i,0) * 70ms);}
+
+  @keyframes fadeSlideIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+  .hero-anim-1{animation:fadeSlideIn .8s cubic-bezier(.2,.7,.3,1) .1s both;}
+  .hero-anim-2{animation:fadeSlideIn .8s cubic-bezier(.2,.7,.3,1) .25s both;}
+  .hero-anim-3{animation:fadeSlideIn .8s cubic-bezier(.2,.7,.3,1) .4s both;}
+  .hero-anim-4{animation:fadeSlideIn .8s cubic-bezier(.2,.7,.3,1) .55s both;}
 
   .topbar{background:var(--plum-dark);color:var(--cream-deep);font-size:.82rem;text-align:center;padding:8px 16px;}
   .topbar strong{color:var(--gold-light);}
@@ -38,59 +43,68 @@
   .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .3s ease;}
   .nav-links a:hover::after{width:100%;}
   .nav-cta{display:flex;gap:10px;}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.88rem;transition:transform .3s cubic-bezier(.2,.8,.3,1.4), box-shadow .3s ease;cursor:pointer;border:none;position:relative;overflow:hidden;}
-  .btn:hover{transform:translateY(-3px) scale(1.02);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.88rem;transition:transform .25s cubic-bezier(.2,.8,.3,1.4), box-shadow .3s ease;cursor:pointer;border:none;position:relative;}
+  .btn:hover{box-shadow:0 8px 20px rgba(36,19,24,.18);}
   .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--plum-dark);box-shadow:var(--shadow-gold);}
   .btn-outline{background:transparent;border:1.5px solid var(--plum);color:var(--plum);}
   .btn-whatsapp{background:var(--whatsapp);color:#fff;}
   .btn-sm{padding:9px 16px;font-size:.8rem;}
   @media (max-width:860px){ .nav-links{display:none;} }
 
-  /* 3D hero */
-  .hero{position:relative;padding:70px 0 60px;overflow:hidden;}
+  .hero{position:relative;padding:64px 0 50px;overflow:hidden;}
   #hero-canvas{position:absolute;top:0;right:0;width:56%;height:100%;pointer-events:none;opacity:.9;}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:2;}
   .hero h1{font-size:3.05rem;line-height:1.12;margin:18px 0 22px;}
   .hero h1 em{font-style:normal;color:var(--gold);}
   .hero p.lead{font-size:1.1rem;color:var(--muted);max-width:470px;margin-bottom:30px;}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px;}
   .trust-strip{display:flex;gap:34px;flex-wrap:wrap;}
   .trust-item{font-size:.85rem;color:var(--plum-dark);font-weight:700;}
   .trust-item b{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--gold);}
   .trust-item small{display:block;font-weight:400;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;}
-  .badge-float{background:var(--paper);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-soft);animation:float 4.5s ease-in-out infinite;display:inline-block;}
+  .badge-float{background:var(--paper);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-soft);animation:float 4.5s ease-in-out infinite, fadeSlideIn .8s cubic-bezier(.2,.7,.3,1) .5s both;display:inline-block;}
   .badge-float b{display:block;font-family:var(--font-display);font-size:1.3rem;color:var(--plum);}
   .badge-float span{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;}
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
   @media (max-width:860px){ #hero-canvas{display:none;} .hero h1{font-size:2.2rem;} }
 
-  section{padding:70px 0;}
+  /* marquee brand strip */
+  .marquee-wrap{background:var(--paper);border-top:1px solid rgba(36,19,24,.08);border-bottom:1px solid rgba(36,19,24,.08);overflow:hidden;padding:16px 0;}
+  .marquee{display:flex;gap:64px;white-space:nowrap;animation:scrollMarquee 22s linear infinite;width:max-content;}
+  .marquee span{font-family:var(--font-display);font-size:1.1rem;color:var(--muted);letter-spacing:.04em;}
+  .marquee span b{color:var(--gold);}
+  @keyframes scrollMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  section{padding:66px 0;position:relative;}
   .section-head{max-width:640px;margin-bottom:40px;}
   .section-head h2{font-size:2.1rem;margin-top:8px;}
 
   .about{background:var(--paper);}
   .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;}
-  .icon-panel{aspect-ratio:1;border-radius:24px;background:linear-gradient(155deg,var(--cream-deep),var(--cream));display:flex;align-items:center;justify-content:center;}
-  .icon-panel svg{width:55%;height:55%;}
+  .icon-panel{aspect-ratio:1;border-radius:24px;background:linear-gradient(155deg,var(--cream-deep),var(--cream));display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+  .icon-panel svg{width:55%;height:55%;transition:transform .6s ease;}
+  .icon-panel:hover svg{transform:rotate(15deg) scale(1.08);}
   .stat-row{display:flex;gap:40px;margin-top:26px;}
   .stat b{font-family:var(--font-display);font-size:2rem;color:var(--gold);display:block;}
   .stat span{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
   @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
 
-  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
-  .why-card{background:var(--paper);border-radius:var(--radius);padding:28px 22px;box-shadow:var(--shadow-soft);transition:transform .35s cubic-bezier(.2,.8,.3,1.3), box-shadow .35s ease;}
-  .why-card:hover{transform:translateY(-8px) rotateX(4deg);box-shadow:0 20px 46px rgba(36,19,24,.16);}
+  .why{position:relative;}
+  #why-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;z-index:2;}
+  .why-card{background:var(--paper);border-radius:var(--radius);padding:28px 22px;box-shadow:var(--shadow-soft);transition:transform .35s cubic-bezier(.2,.8,.3,1.3), box-shadow .35s ease;transform-style:preserve-3d;will-change:transform;}
+  .why-card:hover{box-shadow:0 20px 46px rgba(36,19,24,.16);}
   .why-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));margin-bottom:16px;}
   .why-card h3{font-size:1.1rem;margin-bottom:6px;}
   .why-card p{font-size:.88rem;color:var(--muted);margin:0;}
   @media (max-width:960px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .why-grid{grid-template-columns:1fr;} }
 
-  .categories{background:var(--plum-dark);color:var(--cream);perspective:1200px;}
+  .categories{background:var(--plum-dark);color:var(--cream);}
   .categories .section-head h2{color:var(--cream);}
   .categories .eyebrow{color:var(--gold-light);}
   .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  .cat-card{background:rgba(248,242,233,.06);border:1px solid rgba(217,176,106,.25);border-radius:var(--radius);padding:22px 18px;transition:transform .25s ease, background .3s ease;cursor:pointer;transform-style:preserve-3d;}
+  .cat-card{background:rgba(248,242,233,.06);border:1px solid rgba(217,176,106,.25);border-radius:var(--radius);padding:22px 18px;transition:transform .25s ease, background .3s ease;cursor:pointer;transform-style:preserve-3d;will-change:transform;}
   .cat-card:hover{background:rgba(217,176,106,.14);}
   .cat-card svg{width:34px;height:34px;margin-bottom:12px;}
   .cat-card b{display:block;font-family:var(--font-display);font-size:1.15rem;}
@@ -98,7 +112,7 @@
   @media (max-width:960px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .cat-grid{grid-template-columns:1fr;} }
 
-  .products-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+  .products-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;position:sticky;top:70px;z-index:20;background:var(--cream);padding:10px 0;}
   .chip{font-size:.78rem;font-weight:700;padding:8px 16px;border-radius:999px;border:1px solid rgba(92,31,48,.25);color:var(--plum);transition:all .25s ease;}
   .chip:hover, .chip.active{background:var(--plum);color:var(--cream);}
   .prod-section{margin-bottom:48px;}
@@ -107,18 +121,21 @@
   .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;perspective:1000px;}
   .prod-card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);transition:box-shadow .3s ease;transform-style:preserve-3d;will-change:transform;}
   .prod-card:hover{box-shadow:0 20px 48px rgba(36,19,24,.18);}
-  .prod-img{aspect-ratio:1;background:linear-gradient(155deg,var(--cream-deep),var(--cream));display:flex;align-items:center;justify-content:center;}
+  .prod-img{aspect-ratio:1;background:linear-gradient(155deg,var(--cream-deep),var(--cream));display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+  .prod-img img{width:100%;height:100%;object-fit:contain;transition:transform .5s ease;mix-blend-mode:multiply;}
+  .prod-card:hover .prod-img img{transform:scale(1.08);}
   .prod-img svg{width:44%;height:44%;}
   .prod-body{padding:16px 18px 20px;}
   .prod-brand{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);font-weight:700;}
   .prod-body h4{font-family:var(--font-body);font-weight:700;font-size:.92rem;margin:5px 0 9px;line-height:1.35;color:var(--ink);}
   .prod-price{font-family:var(--font-display);color:var(--plum);font-size:1.1rem;}
   @media (max-width:960px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:560px){ .prod-grid{grid-template-columns:1fr;} }
+  @media (max-width:560px){ .prod-grid{grid-template-columns:1fr;} .products-nav{position:static;} }
 
   .testi{background:var(--cream-deep);}
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
-  .testi-card{background:var(--paper);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-soft);}
+  .testi-card{background:var(--paper);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-soft);transition:transform .3s ease;}
+  .testi-card:hover{transform:translateY(-6px);}
   .testi-card p{font-size:.94rem;margin:0 0 16px;}
   .testi-card footer{font-size:.8rem;color:var(--muted);font-weight:700;}
   .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px;}
@@ -141,6 +158,10 @@
   .sticky-cta.show{transform:translateY(0);}
   .sticky-cta a{flex:1;justify-content:center;}
   @media (max-width:860px){ .sticky-cta{display:flex;} }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  }
 </style>
 </head>
 <body>
@@ -172,8 +193,8 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-outline btn-sm" href="tel:+919914074261">Call Now</a>
-      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/919914074261" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-outline btn-sm magnet" href="tel:+919914074261">Call Now</a>
+      <a class="btn btn-whatsapp btn-sm magnet" href="https://wa.me/919914074261" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </header>
@@ -182,25 +203,27 @@
   <canvas id="hero-canvas"></canvas>
   <div class="container hero-grid">
     <div>
-      <p class="eyebrow">Wholesaler &amp; Distributor · Jalandhar, Punjab</p>
-      <h1>Skincare &amp; baby&nbsp;care, <em>direct from the source</em> — not the marketplace.</h1>
-      <p class="lead">Since 2002, Gumber Traders has supplied retailers and distributors across Punjab with genuine Nutriglow &amp; Aroma facial kits, scrubs, sunscreens, bleach creams and baby diapers — at prices you won't find on IndiaMART.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-gold" href="https://wa.me/919914074261" target="_blank" rel="noopener">Get a Quote on WhatsApp</a>
-        <a class="btn btn-outline" href="tel:+919914074261">Call +91 99140 74261</a>
+      <p class="eyebrow hero-anim-1">Wholesaler &amp; Distributor · Jalandhar, Punjab</p>
+      <h1 class="hero-anim-2">Skincare &amp; baby&nbsp;care, <em>direct from the source</em> — not the marketplace.</h1>
+      <p class="lead hero-anim-3">Since 2002, Gumber Traders has supplied retailers and distributors across Punjab with genuine Nutriglow &amp; Aroma facial kits, scrubs, sunscreens, bleach creams and baby diapers — at prices you won't find on IndiaMART.</p>
+      <div class="hero-ctas hero-anim-4">
+        <a class="btn btn-gold magnet" href="https://wa.me/919914074261" target="_blank" rel="noopener">Get a Quote on WhatsApp</a>
+        <a class="btn btn-outline magnet" href="tel:+919914074261">Call +91 99140 74261</a>
       </div>
-      <div class="trust-strip">
-        <div class="trust-item"><b class="counter" data-to="2002" data-nocomma="1">0</b><small>Established</small></div>
+      <div class="trust-strip hero-anim-4">
+        <div class="trust-item"><b class="counter" data-to="2002">0</b><small>Established</small></div>
         <div class="trust-item"><b class="counter" data-to="8">0</b><small>Categories</small></div>
         <div class="trust-item"><b class="counter" data-to="36">0</b><small>SKUs Stocked</small></div>
         <div class="trust-item">GST<small>Registered Firm</small></div>
       </div>
     </div>
-    <div>
-      <div class="badge-float"><b>K. Kumar</b><span>Proprietor since 2002</span></div>
-    </div>
+    <div><div class="badge-float"><b>K. Kumar</b><span>Proprietor since 2002</span></div></div>
   </div>
 </section>
+
+<div class="marquee-wrap">
+  <div class="marquee" id="marquee"></div>
+</div>
 
 <section class="about" id="about">
   <div class="container about-grid">
@@ -219,13 +242,14 @@
 </section>
 
 <section class="why">
+  <canvas id="why-canvas"></canvas>
   <div class="container">
     <div class="section-head reveal"><p class="eyebrow">Why Retailers Choose Us</p><h2>Built for people who buy in bulk.</h2></div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Direct Pricing</h3><p>No marketplace commission stacked into your rate.</p></div>
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Genuine Brands</h3><p>Authorized Nutriglow, Aroma and Kiddy Soft stock.</p></div>
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Bulk-Friendly MOQs</h3><p>Order by the box or the case, scaled for shop owners.</p></div>
-      <div class="why-card reveal"><div class="why-icon"></div><h3>Fast Dispatch</h3><p>Local Jalandhar warehouse means quicker turnaround.</p></div>
+      <div class="why-card reveal" style="--i:0"><div class="why-icon"></div><h3>Direct Pricing</h3><p>No marketplace commission stacked into your rate.</p></div>
+      <div class="why-card reveal" style="--i:1"><div class="why-icon"></div><h3>Genuine Brands</h3><p>Authorized Nutriglow, Aroma and Kiddy Soft stock.</p></div>
+      <div class="why-card reveal" style="--i:2"><div class="why-icon"></div><h3>Bulk-Friendly MOQs</h3><p>Order by the box or the case, scaled for shop owners.</p></div>
+      <div class="why-card reveal" style="--i:3"><div class="why-icon"></div><h3>Fast Dispatch</h3><p>Local Jalandhar warehouse means quicker turnaround.</p></div>
     </div>
   </div>
 </section>
@@ -243,7 +267,7 @@
     <div class="products-nav" id="prodNav"></div>
     <div id="prodSections"></div>
     <div style="text-align:center;margin-top:20px;">
-      <a class="btn btn-gold" href="https://wa.me/919914074261" target="_blank" rel="noopener">Ask for Current Rate List on WhatsApp</a>
+      <a class="btn btn-gold magnet" href="https://wa.me/919914074261" target="_blank" rel="noopener">Ask for Current Rate List on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -252,9 +276,9 @@
   <div class="container">
     <div class="section-head reveal"><p class="eyebrow">Testimonials</p><h2>What retailers say about ordering with us.</h2></div>
     <div class="testi-grid">
-      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Prices are noticeably better than what I was paying through the marketplace listing, and dispatch is quicker since they're local."</p><footer>— Retail Chemist, Jalandhar</footer></div>
-      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Been ordering facial kits and scrubs for our salon supply chain for over a year. Stock is always genuine Nutriglow."</p><footer>— Salon Supply Distributor, Punjab</footer></div>
-      <div class="testi-card reveal"><div class="stars">★★★★☆</div><p>"Good for bulk diaper orders — reasonable minimum quantities and easy to reach on WhatsApp for reorders."</p><footer>— General Store Owner, Jalandhar</footer></div>
+      <div class="testi-card reveal" style="--i:0"><div class="stars">★★★★★</div><p>"Prices are noticeably better than what I was paying through the marketplace listing, and dispatch is quicker since they're local."</p><footer>— Retail Chemist, Jalandhar</footer></div>
+      <div class="testi-card reveal" style="--i:1"><div class="stars">★★★★★</div><p>"Been ordering facial kits and scrubs for our salon supply chain for over a year. Stock is always genuine Nutriglow."</p><footer>— Salon Supply Distributor, Punjab</footer></div>
+      <div class="testi-card reveal" style="--i:2"><div class="stars">★★★★☆</div><p>"Good for bulk diaper orders — reasonable minimum quantities and easy to reach on WhatsApp for reorders."</p><footer>— General Store Owner, Jalandhar</footer></div>
     </div>
   </div>
 </section>
@@ -274,14 +298,14 @@
       <div><label>Your Name</label><input type="text" placeholder="Full name" required></div>
       <div><label>Phone Number</label><input type="tel" placeholder="10-digit mobile number" required></div>
       <div><label>Interested In</label>
-        <select id="interestSelect">
+        <select>
           <option>Facial Kits</option><option>Facial Scrubs</option><option>Bleach Creams</option>
           <option>Sunscreen Lotions</option><option>Face Wash</option><option>Baby Diapers</option>
           <option>Hair Spa Creams</option><option>Anti-Ageing Serums</option><option>Full Catalogue</option>
         </select>
       </div>
       <div><label>Message / Quantity Required</label><textarea placeholder="e.g. 5 boxes of facial kits, monthly reorder"></textarea></div>
-      <button type="submit" class="btn btn-gold" style="justify-content:center;">Request a Quote</button>
+      <button type="submit" class="btn btn-gold magnet" style="justify-content:center;">Request a Quote</button>
     </form>
   </div>
 </section>
@@ -304,73 +328,79 @@
 
 <script src="three.min.js"></script>
 <script>
-/* ---------- product data (full catalogue, 36 SKUs) ---------- */
+/* ---------- product data with real photos from the IndiaMART listing ---------- */
+const IMG_BASE = "https://5.imimg.com/data5/";
 const CATALOGUE = {
   "Facial Kits": { icon:"ic-kit", items:[
-    ["Nutrigolw","Anti Pigmentation Facial Kit","₹300/Kit"],
-    ["Nutriglow","De Tan Dullness Removal Facial Kit","₹250/Kit"],
-    ["Nutriglow","Gold Kesar Facial Kit (40% less MRP)","₹150/Kit"],
-    ["Nutriglow","Charcoal Facial Kit","₹700/Kit"],
-    ["Nutriglow","Coffee Facial Kit","₹700/Kit"],
-    ["Nutriglow","Skin Whitening Facial Cream","₹150/Kit"],
-    ["Nutriglow","Green Tea Facial Kit","₹700/Piece"],
-    ["Nutriglow","Papaya Face Kit","₹150/Kit"],
-    ["Nutriglow","Papaya Fruit Facial Kit","₹700/Kit"],
-    ["Nutriglow","Diamond Radiance Facial Kit","₹150/Kit"],
-    ["Nutriglow","Aloe Vera Cucumber Facial Kit","₹700/Kit"],
-    ["—","One-Time-Use Facial Kit (40% less MRP)","₹150/Piece"],
+    ["Nutrigolw","Anti Pigmentation Facial Kit","₹300/Kit","SELLER/Default/2023/11/359583199/JB/DD/RC/147448395/whatsapp-image-2023-11-03-at-10-39-31-am-250x250.jpeg"],
+    ["Nutriglow","De Tan Dullness Removal Facial Kit","₹250/Kit","SELLER/Default/2023/11/359584731/LK/ZY/OK/147448395/nutriglow-de-tan-dullness-removal-facial-kit-125x125.jpeg"],
+    ["Nutriglow","Gold Kesar Facial Kit (40% less MRP)","₹150/Kit","SELLER/Default/2023/11/359587754/CU/MQ/GZ/147448395/nutriglow-gold-kesar-kesar-facial-kit-125x125.jpeg"],
+    ["Nutriglow","Charcoal Facial Kit","₹700/Kit","SELLER/Default/2023/11/359281033/SR/ZU/XX/147448395/whatsapp-image-2023-11-03-at-10-40-07-am-1-125x125.jpeg"],
+    ["Nutriglow","Coffee Facial Kit","₹700/Kit","SELLER/Default/2023/11/359588512/LZ/AN/GW/147448395/nutriglow-naturals-coffee-facial-kit-125x125.jpg"],
+    ["Nutriglow","Skin Whitening Facial Cream","₹150/Kit","SELLER/Default/2023/11/359587824/KG/RJ/WY/147448395/nutriglow-skin-whitening-facial-cream-125x125.jpeg"],
+    ["Nutriglow","Green Tea Facial Kit","₹700/Piece","SELLER/Default/2023/11/359226203/QC/NL/TS/147448395/whatsapp-image-2023-11-03-at-10-40-08-am-125x125.jpeg"],
+    ["Nutriglow","Papaya Face Kit","₹150/Kit","SELLER/Default/2023/11/359587556/DM/QZ/HB/147448395/nutriglow-papaya-face-kit-125x125.jpeg"],
+    ["Nutriglow","Papaya Fruit Facial Kit","₹700/Kit","SELLER/Default/2023/11/359225914/FA/JY/JO/147448395/whatsapp-image-2023-11-03-at-10-40-08-am-1-125x125.jpeg"],
+    ["Nutriglow","Diamond Radiance Facial Kit","₹150/Kit","SELLER/Default/2023/11/359587426/EQ/PI/DD/147448395/nutriglow-diamond-radiance-facial-kit-125x125.jpeg"],
+    ["Nutriglow","Aloe Vera Cucumber Facial Kit","₹700/Kit","SELLER/Default/2023/11/359588925/EB/EO/BZ/147448395/nutri-glow-aloe-vera-cucumber-facial-kit-125x125.jpg"],
+    ["—","One-Time-Use Facial Kit (40% less MRP)","₹150/Piece","ANDROID/Default/2023/11/360772712/HZ/BO/FO/147448395/product-jpeg-125x125.jpg"],
   ]},
   "Facial Scrubs": { icon:"ic-scrub", items:[
-    ["Nutriglow","Vitamin C Lightening Scrub","₹275/Tube"],
-    ["Aroma","Charcoal Oil Check Scrub","₹295/Tube"],
-    ["Aroma","Leafs Papaya Facial Scrub","₹425/Jar"],
-    ["Aroma","Leafs Fresh Fruit Facial Scrub","₹350/Jar"],
-    ["Aroma","Fresh Apricot Facial Scrub","₹350/Piece"],
+    ["Nutriglow","Vitamin C Lightening Scrub","₹275/Tube","SELLER/Default/2023/11/359584350/SI/NO/YL/147448395/nutriglow-vitamin-c-lightening-scrub-125x125.jpg"],
+    ["Aroma","Charcoal Oil Check Scrub","₹295/Tube","SELLER/Default/2023/11/359586249/EI/ZL/QF/147448395/aroma-charcoal-oil-check-scrub-125x125.jpg"],
+    ["Aroma","Leafs Papaya Facial Scrub","₹425/Jar","SELLER/Default/2023/11/359586985/NL/ZD/XG/147448395/aroma-leafs-papaya-facial-scrub-125x125.jpg"],
+    ["Aroma","Leafs Fresh Fruit Facial Scrub","₹350/Jar","SELLER/Default/2023/11/359589761/FN/AP/QL/147448395/aroma-leafs-fresh-fruit-facial-scrub-125x125.jpg"],
+    ["Aroma","Fresh Apricot Facial Scrub","₹350/Piece","SELLER/Default/2023/11/359587133/KB/BV/TE/147448395/aroma-fresh-apricot-facial-scrub-125x125.jpg"],
   ]},
   "Bleach Creams": { icon:"ic-bleach", items:[
-    ["Nutriglow","Anti Pigmentation Bleach","₹125/Pack"],
-    ["Nutriglow","De Tan Dullness Removal Bleach","₹125/Pack"],
-    ["Aroma","Ubtan Professional Tan Control Fairness Bleach","₹325/Box"],
-    ["Nutriglow","Age Repair Tightening Bleach","₹125/Pack"],
+    ["Nutriglow","Anti Pigmentation Bleach","₹125/Pack","SELLER/Default/2023/11/359589207/NX/XY/MB/147448395/nutriglow-anti-pigmentation-bleach-125x125.jpg"],
+    ["Nutriglow","De Tan Dullness Removal Bleach","₹125/Pack","SELLER/Default/2023/11/359581666/JL/VC/OS/147448395/nutriglow-de-tan-dullness-removal-bleach-125x125.jpg"],
+    ["Aroma","Ubtan Professional Tan Control Fairness Bleach","₹325/Box","SELLER/Default/2023/11/359587265/ZQ/DC/IB/147448395/aroma-ubtan-professional-tan-control-fairness-bleach-cream-125x125.jpg"],
+    ["Nutriglow","Age Repair Tightening Bleach","₹125/Pack","SELLER/Default/2023/11/359588385/GW/BJ/SG/147448395/nutriglow-age-repair-tightening-bleach-125x125.jpg"],
   ]},
   "Sunscreen Lotions": { icon:"ic-sun", items:[
-    ["Nutriglow","SPF 50 Anti Pollution Sunscreen","₹425/Piece"],
-    ["Aroma","Sunscreen Lotion SPF 30","Ask price"],
-    ["Aroma","Sunscreen Lotion SPF 50","₹395/Tube"],
+    ["Nutriglow","SPF 50 Anti Pollution Sunscreen","₹425/Piece","SELLER/Default/2023/11/359583586/CD/LO/GE/147448395/nutriglow-anti-pollution-suncreen-50-125x125.jpeg"],
+    ["Aroma","Sunscreen Lotion SPF 30","Ask price","SELLER/Default/2023/11/359586093/OX/AI/CW/147448395/aroma-sunscreen-lotion-spf-30-125x125.jpg"],
+    ["Aroma","Sunscreen Lotion SPF 50","₹395/Tube","SELLER/Default/2023/11/359590190/US/QE/EN/147448395/aroma-suncreen-lotion-spf-50-125x125.jpg"],
   ]},
   "Face Wash": { icon:"ic-wash", items:[
-    ["Aroma","Oil Control Face Wash","₹225/Tube"],
-    ["Aroma","Age Control Face Wash","Ask price"],
-    ["Aroma","Perfect Glow Face Wash","₹225/Tube"],
+    ["Aroma","Oil Control Face Wash","₹225/Tube","SELLER/Default/2023/11/359583170/FV/DB/JD/147448395/aroma-oil-control-face-wash-125x125.jpg"],
+    ["Aroma","Age Control Face Wash","Ask price","SELLER/Default/2023/11/359582814/TZ/OG/MK/147448395/aroma-age-control-face-wash-125x125.jpg"],
+    ["Aroma","Perfect Glow Face Wash","₹225/Tube","SELLER/Default/2023/11/359582971/AZ/CZ/TI/147448395/aroma-perfect-glow-face-wash-125x125.jpg"],
   ]},
   "Baby Diapers": { icon:"ic-diaper", items:[
-    ["Kiddy Soft","Cotton Pants Diaper (25% less MRP)","₹120/Pack"],
-    ["Kiddle Care","Baby Pant Diaper (25% less MRP)","₹11/Piece"],
-    ["—","All Diapers (mixed sizes)","Ask price"],
+    ["Kiddy Soft","Cotton Pants Diaper (25% less MRP)","₹120/Pack","SELLER/Default/2023/11/359589516/MW/RL/GR/147448395/kiddy-soft-cotton-pants-diaper-125x125.jpg"],
+    ["Kiddle Care","Baby Pant Diaper (25% less MRP)","₹11/Piece","ANDROID/Default/2023/11/362142484/VM/JY/JE/147448395/product-jpeg-125x125.jpg"],
+    ["—","All Diapers (mixed sizes)","Ask price","SELLER/Default/2023/11/357929325/UB/ID/KQ/147448395/all-diapers-125x125.jpg"],
   ]},
   "Hair Spa Creams": { icon:"ic-spa", items:[
-    ["Nutriglow","Color Protect Spa","Ask price"],
-    ["Nutriglow","Keratin Hair Spa","Ask price"],
-    ["Nutriglow","Protein Hair Spa","Ask price"],
-    ["Nutriglow","Biotin Hair Spa Cream","Ask price"],
+    ["Nutriglow","Color Protect Spa","Ask price","SELLER/Default/2023/11/359280780/DF/RZ/UG/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-125x125.jpeg"],
+    ["Nutriglow","Keratin Hair Spa","Ask price","SELLER/Default/2023/11/359278973/TW/AF/EA/147448395/whatsapp-image-2023-11-03-at-10-40-05-am-125x125.jpeg"],
+    ["Nutriglow","Protein Hair Spa","Ask price","SELLER/Default/2023/11/359278924/RX/RJ/ZH/147448395/whatsapp-image-2023-11-03-at-10-40-05-am-1-125x125.jpeg"],
+    ["Nutriglow","Biotin Hair Spa Cream","Ask price","SELLER/Default/2023/11/359280448/TV/OK/VI/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-1-125x125.jpeg"],
   ]},
   "Anti-Ageing Serums": { icon:"ic-serum", items:[
-    ["Nutriglow","Age Repair Tightening Serum","₹700/Box"],
-    ["Nutriglow","Anti Pigmentation Serum","₹700/Box"],
+    ["Nutriglow","Age Repair Tightening Serum","₹700/Box","SELLER/Default/2023/11/359588120/XZ/RA/DB/147448395/nutigolw-age-repair-tightening-serum-125x125.jpg"],
+    ["Nutriglow","Anti Pigmentation Serum","₹700/Box","SELLER/Default/2023/11/359581192/JO/IU/EM/147448395/nutri-anti-pigmentation-serum-125x125.jpg"],
   ]},
 };
 
+/* marquee brands */
+document.getElementById('marquee').innerHTML =
+  Array(2).fill('<span><b>Nutriglow</b> Authorized Stockist</span><span><b>Aroma</b> Authorized Stockist</span><span><b>Kiddy Soft</b> Authorized Stockist</span><span>Est. <b>2002</b></span><span><b>GST</b> Registered</span>').join('');
+
 /* render category grid */
 const catGrid = document.getElementById('catGrid');
-Object.entries(CATALOGUE).forEach(([name, data]) => {
+Object.entries(CATALOGUE).forEach(([name, data], i) => {
   const el = document.createElement('div');
   el.className = 'cat-card reveal';
+  el.style.setProperty('--i', i);
   el.innerHTML = `<svg><use href="#${data.icon}"/></svg><b>${name}</b><span>${data.items.length} Products</span>`;
   el.addEventListener('click', () => document.getElementById('sec-'+data.icon).scrollIntoView({behavior:'smooth', block:'start'}));
   catGrid.appendChild(el);
 });
 
-/* render product nav chips + sections */
+/* render product nav chips + sections, with real photo + icon fallback */
 const prodNav = document.getElementById('prodNav');
 const prodSections = document.getElementById('prodSections');
 Object.entries(CATALOGUE).forEach(([name, data]) => {
@@ -380,9 +410,12 @@ Object.entries(CATALOGUE).forEach(([name, data]) => {
 
   const sec = document.createElement('div');
   sec.className = 'prod-section'; sec.id = 'sec-'+data.icon;
-  const grid = data.items.map(([brand, item, price]) => `
-    <div class="prod-card reveal">
-      <div class="prod-img"><svg><use href="#${data.icon}"/></svg></div>
+  const grid = data.items.map(([brand, item, price, img], i) => `
+    <div class="prod-card reveal" style="--i:${i%8}">
+      <div class="prod-img">
+        <img src="${IMG_BASE}${img}" alt="${brand} ${item}" loading="lazy"
+             onerror="this.replaceWith(Object.assign(document.createElementNS('http://www.w3.org/2000/svg','svg'),{innerHTML:'<use href=%23${data.icon}></use>'}))">
+      </div>
       <div class="prod-body">
         <div class="prod-brand">${brand}</div>
         <h4>${item}</h4>
@@ -417,7 +450,7 @@ document.querySelectorAll('.counter').forEach(el => {
 });
 
 /* tilt effect on product + why cards */
-document.querySelectorAll('.prod-card, .why-card').forEach(card => {
+document.querySelectorAll('.prod-card, .why-card, .cat-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const r = card.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
@@ -427,13 +460,24 @@ document.querySelectorAll('.prod-card, .why-card').forEach(card => {
   card.addEventListener('mouseleave', () => { card.style.transform = ''; });
 });
 
+/* magnetic buttons */
+document.querySelectorAll('.magnet').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const r = btn.getBoundingClientRect();
+    const x = (e.clientX - r.left - r.width/2) * 0.25;
+    const y = (e.clientY - r.top - r.height/2) * 0.5;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+});
+
 /* sticky mobile CTA */
 const stickyCta = document.getElementById('stickyCta');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 420) stickyCta.classList.add('show'); else stickyCta.classList.remove('show');
 });
 
-/* ---------- Three.js 3D hero ---------- */
+/* ---------- Three.js hero: rotating faceted gem + wireframe shell ---------- */
 (function(){
   const canvas = document.getElementById('hero-canvas');
   if (!canvas || typeof THREE === 'undefined') return;
@@ -443,42 +487,22 @@ window.addEventListener('scroll', () => {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);
   camera.position.set(0, 0, 9);
-
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setSize(w, h);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  const geo = new THREE.IcosahedronGeometry(2.4, 1);
-  const mat = new THREE.MeshStandardMaterial({ color: 0xb6863c, metalness: 0.7, roughness: 0.25, flatShading: true });
-  const gem = new THREE.Mesh(geo, mat);
+  const gem = new THREE.Mesh(new THREE.IcosahedronGeometry(2.4, 1), new THREE.MeshStandardMaterial({ color: 0xb6863c, metalness: 0.7, roughness: 0.25, flatShading: true }));
   scene.add(gem);
-
-  const wireGeo = new THREE.IcosahedronGeometry(2.55, 1);
-  const wireMat = new THREE.MeshBasicMaterial({ color: 0xd9b06a, wireframe: true, transparent: true, opacity: 0.35 });
-  const wire = new THREE.Mesh(wireGeo, wireMat);
+  const wire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.55, 1), new THREE.MeshBasicMaterial({ color: 0xd9b06a, wireframe: true, transparent: true, opacity: 0.35 }));
   scene.add(wire);
 
-  const ambient = new THREE.AmbientLight(0xf8f2e9, 0.6);
-  scene.add(ambient);
-  const point = new THREE.PointLight(0xffffff, 1.4);
-  point.position.set(5, 5, 8);
-  scene.add(point);
-  const point2 = new THREE.PointLight(0x5c1f30, 0.8);
-  point2.position.set(-6, -3, 4);
-  scene.add(point2);
+  scene.add(new THREE.AmbientLight(0xf8f2e9, 0.6));
+  const point = new THREE.PointLight(0xffffff, 1.4); point.position.set(5,5,8); scene.add(point);
+  const point2 = new THREE.PointLight(0x5c1f30, 0.8); point2.position.set(-6,-3,4); scene.add(point2);
 
   let mx = 0, my = 0;
-  window.addEventListener('mousemove', (e) => {
-    mx = (e.clientX / window.innerWidth - 0.5);
-    my = (e.clientY / window.innerHeight - 0.5);
-  });
-
-  function onResize(){
-    w = parent.clientWidth; h = parent.clientHeight;
-    camera.aspect = w/h; camera.updateProjectionMatrix();
-    renderer.setSize(w, h);
-  }
-  window.addEventListener('resize', onResize);
+  window.addEventListener('mousemove', (e) => { mx = (e.clientX/window.innerWidth-0.5); my = (e.clientY/window.innerHeight-0.5); });
+  window.addEventListener('resize', () => { w = parent.clientWidth; h = parent.clientHeight; camera.aspect = w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h); });
 
   function animate(){
     requestAnimationFrame(animate);
@@ -487,6 +511,47 @@ window.addEventListener('scroll', () => {
     camera.position.x += (mx*2 - camera.position.x) * 0.03;
     camera.position.y += (-my*1.2 - camera.position.y) * 0.03;
     camera.lookAt(0,0,0);
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+/* ---------- Three.js "why us" section: drifting gold particle field ---------- */
+(function(){
+  const canvas = document.getElementById('why-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
+  const parent = canvas.parentElement;
+  let w = parent.clientWidth, h = parent.clientHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, w/h, 0.1, 50);
+  camera.position.z = 12;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const count = 140;
+  const positions = new Float32Array(count * 3);
+  for (let i = 0; i < count; i++) {
+    positions[i*3] = (Math.random()-0.5)*22;
+    positions[i*3+1] = (Math.random()-0.5)*10;
+    positions[i*3+2] = (Math.random()-0.5)*10;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const mat = new THREE.PointsMaterial({ color: 0xb6863c, size: 0.08, transparent: true, opacity: 0.55 });
+  const points = new THREE.Points(geo, mat);
+  scene.add(points);
+
+  window.addEventListener('resize', () => {
+    w = parent.clientWidth; h = parent.clientHeight;
+    camera.aspect = w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h);
+  });
+
+  function animate(){
+    requestAnimationFrame(animate);
+    points.rotation.y += 0.0006;
+    points.rotation.x += 0.0002;
     renderer.render(scene, camera);
   }
   animate();
