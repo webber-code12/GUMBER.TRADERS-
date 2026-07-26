@@ -3,1313 +3,363 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gumber Traders — Wholesale Cosmetics, Skincare &amp; Baby Care Supplier | Jalandhar</title>
-<meta name="description" content="Gumber Traders — trusted wholesale supplier of cosmetics, skincare, hair care and baby care products in Jalandhar, Punjab since 2002. Bulk pricing, fast response, direct supply.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<title>Gumber Traders — Wholesale Skincare, Facial & Baby Care Products, Jalandhar</title>
+<meta name="description" content="Gumber Traders, established 2002, Jalandhar — direct wholesale supplier of Nutriglow & Aroma facial kits, scrubs, sunscreens, bleach creams, hair spa and baby diapers to retailers across Punjab.">
 <style>
   :root{
-    --navy:#0E3B52;
-    --navy-deep:#071D2B;
-    --navy-deeper:#050F17;
-    --green:#1C7A5E;
-    --green-light:#279E7A;
-    --gold:#D8AE55;
-    --gold-soft:#F1D48C;
-    --paper:#F6F4EE;
-    --paper-warm:#EFEAE0;
-    --ink:#132229;
-    --ink-soft:#4B5D63;
-    --line:#DCD6C8;
-    --white:#FFFFFF;
-    --whatsapp:#25D366;
-    --radius:16px;
-    --shadow: 0 10px 30px -12px rgba(8,39,56,0.25);
-    --shadow-lg: 0 30px 70px -25px rgba(5,15,23,0.55);
-    --maxw: 1180px;
-    --ease: cubic-bezier(.22,1,.36,1);
+    --ink:#241318;
+    --plum:#5c1f30;
+    --plum-dark:#3d1520;
+    --plum-light:#7a2c40;
+    --gold:#b6863c;
+    --gold-light:#d9b06a;
+    --cream:#f8f2e9;
+    --cream-deep:#efe4d3;
+    --paper:#ffffff;
+    --muted:#7a6a63;
+    --whatsapp:#2fae60;
+    --font-display:"Big Caslon","Didot","Iowan Old Style","Palatino Linotype",Georgia,serif;
+    --font-body:"Century Gothic","Futura","Avenir Next",Avenir,"Segoe UI",sans-serif;
+    --radius:18px;
+    --shadow-soft:0 12px 40px rgba(36,19,24,.10);
+    --shadow-gold:0 10px 30px rgba(182,134,60,.25);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:'Manrope', sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    -webkit-font-smoothing:antialiased;
-    line-height:1.55;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4{
-    font-family:'Sora', sans-serif;
-    color:var(--navy-deep);
-    line-height:1.15;
-    margin:0 0 .5em 0;
-    letter-spacing:-0.01em;
-  }
-  a{color:inherit;text-decoration:none;}
+  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.6;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:400;color:var(--plum-dark);margin:0;}
+  a{text-decoration:none;color:inherit;}
   img{max-width:100%;display:block;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    font-family:'Sora',sans-serif;
-    font-size:.72rem;
-    font-weight:700;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--green);
-    display:flex;align-items:center;gap:8px;
-    margin-bottom:14px;
-  }
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);display:inline-block;}
-  section{padding:88px 0;position:relative;}
-  @media(max-width:720px){ section{padding:60px 0;} }
+  .container{max-width:1160px;margin:0 auto;padding:0 24px;}
+  .eyebrow{font-family:var(--font-body);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--gold);font-weight:600;}
 
-  /* ===== Scroll progress bar ===== */
-  .progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;
-    background:linear-gradient(90deg,var(--green),var(--gold));
-    z-index:200;transition:width .1s linear;
-  }
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
 
-  /* ===== Buttons ===== */
-  .btn{
-    position:relative;overflow:hidden;isolation:isolate;
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;
-    padding:14px 26px;border-radius:10px;cursor:pointer;border:none;
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s ease;
-    white-space:nowrap;
-  }
-  .btn::before{
-    content:"";position:absolute;inset:0;z-index:-1;
-    background:linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35) 48%, transparent 66%);
-    transform:translateX(-120%);
-  }
-  .btn:hover::before{animation:shine 1.1s ease;}
-  @keyframes shine{ to{ transform:translateX(120%);} }
-  .btn:hover{transform:translateY(-2px);}
-  .btn:active{transform:scale(.97) translateY(0);}
-  .btn-whatsapp{background:var(--whatsapp);color:#fff;box-shadow:0 8px 24px -6px rgba(37,211,102,.55);}
-  .btn-whatsapp:hover{background:#1fbd59;box-shadow:0 14px 30px -8px rgba(37,211,102,.65);}
-  .btn-whatsapp.pulse{animation:pulseRing 2.6s ease-in-out infinite;}
-  @keyframes pulseRing{
-    0%,100%{ box-shadow:0 8px 24px -6px rgba(37,211,102,.55), 0 0 0 0 rgba(37,211,102,.45);}
-    50%{ box-shadow:0 8px 24px -6px rgba(37,211,102,.55), 0 0 0 10px rgba(37,211,102,0);}
-  }
-  .btn-call{background:var(--navy-deep);color:#fff;}
-  .btn-call:hover{background:#0a3247;}
-  .btn-outline{background:transparent;color:var(--navy-deep);border:1.5px solid var(--navy-deep);}
-  .btn-outline:hover{background:var(--navy-deep);color:#fff;}
-  .btn-gold{background:linear-gradient(120deg,var(--gold),#c8973f);color:#2A2110;}
-  .btn-gold:hover{filter:brightness(1.06);box-shadow:0 14px 30px -10px rgba(216,174,85,.6);}
-  .btn svg{width:18px;height:18px;flex-shrink:0;}
+  /* announcement bar */
+  .topbar{background:var(--plum-dark);color:var(--cream-deep);font-size:.82rem;text-align:center;padding:8px 16px;letter-spacing:.03em;}
+  .topbar strong{color:var(--gold-light);}
 
-  /* ===== Top bar ===== */
-  .topbar{
-    background:var(--navy-deeper);color:#E7EEF1;font-size:.8rem;
-    padding:8px 0;
-  }
-  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
-  .topbar a{opacity:.9;}
-  .topbar .tb-item{display:flex;align-items:center;gap:6px;}
-
-  /* ===== Nav ===== */
-  header.nav{
-    position:sticky;top:0;z-index:100;
-    background:rgba(246,244,238,.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-    transition:padding .3s var(--ease), box-shadow .3s var(--ease), background .3s ease;
-  }
-  header.nav.scrolled{
-    padding-top:0; box-shadow:0 8px 24px -16px rgba(8,39,56,.35);
-    background:rgba(246,244,238,.96);
-  }
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;transition:padding .3s var(--ease);}
-  header.nav.scrolled .wrap{padding-top:9px;padding-bottom:9px;}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy-deep);}
-  .brand .mark{
-    width:38px;height:38px;border-radius:9px;
-    background:linear-gradient(145deg,var(--navy) 0%, var(--green) 100%);
-    display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Sora';font-weight:800;font-size:1rem;
-    transition:transform .35s var(--ease);
-  }
-  .brand:hover .mark{transform:rotate(-8deg) scale(1.06);}
-  .nav-links{display:flex;gap:28px;font-size:.92rem;font-weight:600;}
-  .nav-links a{color:var(--ink-soft);position:relative;padding-bottom:4px;}
-  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .3s var(--ease);}
-  .nav-links a:hover{color:var(--navy-deep);}
+  /* nav */
+  header.nav{background:var(--paper);border-bottom:1px solid rgba(36,19,24,.08);position:sticky;top:0;z-index:40;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto;}
+  .brand{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.02em;color:var(--plum);}
+  .brand span{color:var(--gold);}
+  .nav-links{display:flex;gap:32px;font-size:.9rem;font-weight:600;letter-spacing:.02em;}
+  .nav-links a{position:relative;padding-bottom:4px;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .3s ease;}
   .nav-links a:hover::after{width:100%;}
   .nav-cta{display:flex;gap:10px;}
-  .nav-cta .btn{padding:10px 16px;font-size:.85rem;}
-  @media(max-width:860px){ .nav-links{display:none;} }
-  @media(max-width:520px){ .nav-cta .btn-call span{display:none;} }
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.88rem;letter-spacing:.02em;transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;border:none;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--plum-dark);box-shadow:var(--shadow-gold);}
+  .btn-outline{background:transparent;border:1.5px solid var(--plum);color:var(--plum);}
+  .btn-whatsapp{background:var(--whatsapp);color:#fff;}
+  .btn-sm{padding:9px 16px;font-size:.8rem;}
+  @media (max-width:860px){ .nav-links{display:none;} }
 
-  /* ===== Hero ===== */
-  .hero{
-    position:relative;
-    background:
-      radial-gradient(circle at 85% 10%, rgba(216,174,85,.14), transparent 45%),
-      linear-gradient(150deg,var(--navy-deeper) 0%, var(--navy-deep) 55%, #0d3a30 130%);
-    color:#fff;
-    padding:88px 0 108px;
-    overflow:hidden;
-  }
-  .hero::after{
-    content:"";position:absolute;inset:0;
-    background-image:radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
-    background-size:26px 26px;
-    pointer-events:none;
-  }
-  .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;pointer-events:none;}
-  .orb1{width:420px;height:420px;background:var(--green-light);top:-140px;right:-80px;animation:drift1 16s ease-in-out infinite;}
-  .orb2{width:340px;height:340px;background:var(--gold);bottom:-120px;left:-100px;animation:drift2 20s ease-in-out infinite;}
-  @keyframes drift1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-40px,50px);} }
-  @keyframes drift2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(50px,-40px);} }
-  .spotlight{
-    position:absolute;inset:0;pointer-events:none;z-index:1;
-    background:radial-gradient(420px circle at var(--mx,50%) var(--my,20%), rgba(216,174,85,.10), transparent 60%);
-    transition:background .1s linear;
-  }
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:2;}
-  @media(max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+  /* hero */
+  .hero{padding:88px 0 70px;position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(182,134,60,.18),transparent 70%);}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .hero h1{font-size:3.1rem;line-height:1.12;margin:18px 0 22px;}
+  .hero h1 em{font-style:normal;color:var(--gold);}
+  .hero p.lead{font-size:1.12rem;color:var(--muted);max-width:480px;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+  .trust-strip{display:flex;gap:36px;flex-wrap:wrap;}
+  .trust-item{font-size:.85rem;color:var(--plum-dark);font-weight:700;}
+  .trust-item small{display:block;font-weight:400;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;}
+  .hero-visual{aspect-ratio:4/5;border-radius:28px;background:linear-gradient(155deg,var(--plum),var(--plum-dark));position:relative;box-shadow:var(--shadow-soft);display:flex;align-items:center;justify-content:center;color:rgba(248,242,233,.55);font-size:.9rem;letter-spacing:.05em;}
+  .hero-visual::after{content:"";position:absolute;inset:14px;border:1px solid rgba(217,176,106,.4);border-radius:20px;}
+  .badge-float{position:absolute;bottom:-18px;left:-18px;background:var(--paper);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-soft);animation:float 4.5s ease-in-out infinite;}
+  .badge-float b{display:block;font-family:var(--font-display);font-size:1.4rem;color:var(--plum);}
+  .badge-float span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} .hero h1{font-size:2.3rem;} .hero-visual{order:-1;aspect-ratio:16/10;} }
 
-  .reveal-up{opacity:0;transform:translateY(22px);animation:revealUp .8s var(--ease) forwards;}
-  @keyframes revealUp{ to{opacity:1;transform:translateY(0);} }
-  .d1{animation-delay:.05s;} .d2{animation-delay:.18s;} .d3{animation-delay:.32s;} .d4{animation-delay:.46s;} .d5{animation-delay:.6s;}
-
-  .hero-eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);
-    padding:7px 14px;border-radius:99px;
-    font-size:.75rem;font-weight:700;letter-spacing:.05em;
-    color:var(--gold-soft);margin-bottom:22px;
-  }
-  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--whatsapp);animation:blink 1.8s ease-in-out infinite;}
-  @keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:.3;} }
-  .hero h1{
-    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
-    color:#fff;
-    max-width:12.5ch;
-  }
-  .hero h1 .accent{
-    background:linear-gradient(100deg,var(--gold-soft),var(--gold) 45%,#fff 90%);
-    background-size:200% auto;
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    animation:sheen 5s linear infinite;
-  }
-  @keyframes sheen{ to{ background-position:200% center; } }
-  .hero p.lede{
-    font-size:1.12rem;color:#CBD9DC;max-width:46ch;margin:18px 0 30px;
-  }
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px;}
-  .hero-actions .btn{padding:16px 28px;font-size:1rem;}
-  .trust-strip{display:flex;gap:28px;flex-wrap:wrap;}
-  .trust-item{display:flex;align-items:center;gap:10px;}
-  .trust-item .ti-num{font-family:'Sora';font-weight:800;font-size:1.35rem;color:#fff;}
-  .trust-item .ti-label{font-size:.78rem;color:#AFC2C6;line-height:1.25;max-width:11ch;}
-
-  .hero-card{
-    background:var(--paper);
-    border-radius:22px;
-    padding:22px;
-    box-shadow:0 40px 80px -25px rgba(0,0,0,.55);
-    position:relative;
-    transform-style:preserve-3d;
-    transition:transform .25s var(--ease);
-  }
-  .hero-card img{border-radius:14px;width:100%;height:340px;object-fit:cover;}
-  .hero-card .hc-tag{
-    position:absolute;top:40px;left:40px;
-    background:var(--white);color:var(--navy-deep);
-    font-family:'Sora';font-weight:700;font-size:.78rem;
-    padding:8px 14px;border-radius:8px;box-shadow:var(--shadow);
-    display:flex;align-items:center;gap:8px;
-  }
-  .hero-card .hc-tag .stars{color:var(--gold);letter-spacing:1px;}
-  .hero-card .hc-badge{
-    position:absolute;bottom:40px;right:40px;
-    background:var(--green);color:#fff;
-    font-family:'Sora';font-weight:700;font-size:.8rem;
-    padding:10px 16px;border-radius:10px;box-shadow:var(--shadow);
-    display:flex;align-items:center;gap:8px;
-    animation:floatY 3.4s ease-in-out infinite;
-  }
-  @keyframes floatY{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
-  @media(max-width:900px){ .hero-card{margin-top:8px;} }
-
-  /* ===== Marquee gallery ===== */
-  .marquee-section{background:var(--navy-deeper);padding:36px 0;overflow:hidden;}
-  .marquee-label{color:#8EA3A8;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;text-align:center;margin-bottom:18px;font-weight:700;}
-  .marquee-track{display:flex;gap:18px;width:max-content;animation:marquee 42s linear infinite;}
-  .marquee-section:hover .marquee-track{animation-play-state:paused;}
-  .marquee-track img{
-    width:190px;height:130px;object-fit:cover;border-radius:12px;
-    border:1px solid rgba(255,255,255,.12);
-    filter:saturate(.9) brightness(.92);
-    transition:filter .3s ease, transform .3s ease;
-  }
-  .marquee-track img:hover{filter:saturate(1.1) brightness(1);transform:translateY(-4px);}
-  @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-
-  /* ===== Section heads ===== */
+  section{padding:76px 0;}
   .section-head{max-width:640px;margin-bottom:44px;}
-  .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);}
-  .section-head p{color:var(--ink-soft);font-size:1.02rem;}
+  .section-head h2{font-size:2.2rem;margin-top:10px;}
 
-  /* ===== fade-up on scroll ===== */
-  .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
-  .fade-up.in{opacity:1;transform:translateY(0);}
-  .stagger.in{transition-delay:calc(var(--i,0) * 90ms);}
+  /* about */
+  .about{background:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
+  .about-visual{aspect-ratio:1;border-radius:24px;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;}
+  .stat-row{display:flex;gap:40px;margin-top:28px;}
+  .stat b{font-family:var(--font-display);font-size:2rem;color:var(--gold);display:block;}
+  .stat span{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} .about-visual{order:-1;} }
 
-  /* ===== About ===== */
-  .about{background:var(--white);}
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center;}
-  @media(max-width:860px){ .about-grid{grid-template-columns:1fr;gap:36px;} }
-  .about-photo{position:relative;}
-  .about-photo .clip{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);}
-  .about-photo img{height:420px;object-fit:cover;transition:transform .6s var(--ease);}
-  .about-photo:hover img{transform:scale(1.05);}
-  .about-stat{
-    position:absolute;bottom:-24px;left:-24px;
-    background:var(--navy-deep);color:#fff;padding:20px 24px;border-radius:14px;
-    box-shadow:var(--shadow);
-  }
-  .about-stat .num{font-family:'Sora';font-weight:800;font-size:2rem;color:var(--gold);}
-  .about-stat .lbl{font-size:.78rem;color:#C9D6D9;}
-  @media(max-width:520px){ .about-photo{margin-bottom:36px;} .about-stat{left:0;right:0;margin:0 16px;bottom:-20px;} }
-  .about-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px;}
-  .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:.98rem;color:var(--ink-soft);}
-  .about-list .check{
-    flex-shrink:0;width:24px;height:24px;border-radius:7px;background:rgba(28,122,94,.12);
-    color:var(--green);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;
-    margin-top:1px;
-  }
+  /* why choose */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .why-card{background:var(--paper);border-radius:var(--radius);padding:30px 24px;box-shadow:var(--shadow-soft);transition:transform .3s ease;}
+  .why-card:hover{transform:translateY(-6px);}
+  .why-icon{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));margin-bottom:18px;}
+  .why-card h3{font-size:1.15rem;margin-bottom:8px;}
+  .why-card p{font-size:.9rem;color:var(--muted);margin:0;}
+  @media (max-width:960px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .why-grid{grid-template-columns:1fr;} }
 
-  /* ===== Categories ===== */
-  .categories{background:var(--paper-warm);}
+  /* categories */
+  .categories{background:var(--plum-dark);color:var(--cream);}
+  .categories .section-head h2{color:var(--cream);}
+  .categories .eyebrow{color:var(--gold-light);}
   .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  @media(max-width:960px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
-  @media(max-width:520px){ .cat-grid{grid-template-columns:1fr;} }
-  .cat-card{
-    background:var(--white);border-radius:16px;overflow:hidden;
-    box-shadow:0 6px 18px -10px rgba(14,59,82,.18);
-    border:1px solid var(--line);
-    transition:transform .35s var(--ease), box-shadow .35s var(--ease);
-    will-change:transform;
-  }
-  .cat-card:hover{box-shadow:0 24px 40px -16px rgba(14,59,82,.32);}
-  .cat-card .cat-img{height:170px;overflow:hidden;position:relative;}
-  .cat-card .cat-img::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(120deg, transparent 20%, rgba(255,255,255,.5) 38%, transparent 55%);
-    transform:translateX(-120%);
-  }
-  .cat-card:hover .cat-img::after{animation:shine .9s ease;}
-  .cat-card .cat-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
-  .cat-card:hover .cat-img img{transform:scale(1.08);}
-  .cat-card .cat-body{padding:18px 18px 20px;}
-  .cat-card h3{font-size:1.02rem;margin-bottom:4px;}
-  .cat-card p{font-size:.83rem;color:var(--ink-soft);margin:0 0 14px;}
-  .cat-card .cat-link{font-size:.82rem;font-weight:700;color:var(--green);display:inline-flex;align-items:center;gap:6px;transition:gap .25s ease;}
-  .cat-card .cat-link:hover{gap:10px;}
+  .cat-card{background:rgba(248,242,233,.06);border:1px solid rgba(217,176,106,.25);border-radius:var(--radius);padding:26px 20px;transition:background .3s ease, transform .3s ease;}
+  .cat-card:hover{background:rgba(217,176,106,.14);transform:translateY(-4px);}
+  .cat-card b{font-family:var(--font-display);font-size:1.3rem;}
+  .cat-card span{display:block;font-size:.78rem;color:var(--gold-light);margin-top:6px;letter-spacing:.04em;}
+  @media (max-width:960px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cat-grid{grid-template-columns:1fr;} }
 
-  /* ===== Featured products ===== */
-  .products{background:var(--white);}
-  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
-  @media(max-width:960px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
-  @media(max-width:520px){ .prod-grid{grid-template-columns:1fr;} }
-  .prod-card{
-    border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper);
-    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
-  }
-  .prod-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-  .prod-card .prod-img{height:190px;overflow:hidden;position:relative;background:#fff;}
-  .prod-card .prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease);}
-  .prod-card:hover .prod-img img{transform:scale(1.08) rotate(-1deg);}
-  .prod-card .price-tag{
-    position:absolute;top:10px;right:10px;background:var(--navy-deep);color:#fff;
-    font-family:'Sora';font-weight:700;font-size:.74rem;padding:5px 10px;border-radius:99px;
-  }
-  .prod-card .prod-body{padding:16px;}
-  .prod-card .brand-tag{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);}
-  .prod-card h4{font-size:.95rem;margin:4px 0 12px;min-height:2.4em;}
-  .price-tag.price-ask{background:var(--gold);color:#2A2110;}
-  .prod-card.hidden{display:none;}
+  /* products */
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .prod-card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);transition:transform .3s ease, box-shadow .3s ease;}
+  .prod-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(36,19,24,.16);}
+  .prod-img{aspect-ratio:1;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.78rem;}
+  .prod-body{padding:18px 20px 22px;}
+  .prod-brand{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
+  .prod-body h3{font-size:1rem;margin:6px 0 10px;line-height:1.35;}
+  .prod-price{font-family:var(--font-display);color:var(--plum);font-size:1.15rem;}
+  @media (max-width:960px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .prod-grid{grid-template-columns:1fr;} }
 
-  /* ===== Filter bar ===== */
-  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;}
-  .filter-btn{
-    font-family:'Sora',sans-serif;font-weight:700;font-size:.8rem;
-    padding:9px 16px;border-radius:99px;border:1.5px solid var(--line);
-    background:var(--white);color:var(--ink-soft);cursor:pointer;
-    transition:all .3s var(--ease);
-  }
-  .filter-btn:hover{border-color:var(--green);color:var(--navy-deep);transform:translateY(-2px);}
-  .filter-btn.active{background:linear-gradient(120deg,var(--navy-deep),var(--green));color:#fff;border-color:transparent;box-shadow:0 8px 18px -8px rgba(28,122,94,.5);}
-  .prod-card .btn{width:100%;padding:10px;font-size:.82rem;}
+  /* testimonials */
+  .testi{background:var(--cream-deep);}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .testi-card{background:var(--paper);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-soft);}
+  .testi-card p{font-size:.95rem;color:var(--ink);margin:0 0 18px;}
+  .testi-card footer{font-size:.82rem;color:var(--muted);font-weight:700;}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px;}
+  @media (max-width:860px){ .testi-grid{grid-template-columns:1fr;} }
 
-  /* ===== Testimonials ===== */
-  .testimonials{background:var(--navy-deep);color:#fff;}
-  .testimonials .section-head p{color:#B8CACD;}
-  .testimonials .section-head h2{color:#fff;}
-  .rating-summary{
-    display:flex;align-items:center;gap:18px;margin-bottom:40px;flex-wrap:wrap;
-    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
-    padding:20px 24px;border-radius:14px;
-  }
-  .rating-summary .big{font-family:'Sora';font-weight:800;font-size:2.4rem;color:var(--gold);}
-  .rating-summary .stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;}
-  .rating-summary .meta{font-size:.85rem;color:#AFC2C6;}
-  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media(max-width:860px){ .t-grid{grid-template-columns:1fr;} }
-  .t-card{
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:16px;padding:24px;
-    transition:transform .3s var(--ease), background .3s ease, border-color .3s ease;
-  }
-  .t-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.09);border-color:rgba(216,174,85,.4);}
-  .t-card .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px;}
-  .t-card .prod{font-size:.92rem;color:#E7EEF1;margin-bottom:18px;}
-  .t-card .who{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:14px;}
-  .t-card .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,var(--green),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Sora';font-weight:800;font-size:.9rem;color:#fff;}
-  .t-card .who-name{font-weight:700;font-size:.88rem;}
-  .t-card .who-loc{font-size:.76rem;color:#AFC2C6;}
-  .t-card .verified{margin-left:auto;font-size:.68rem;background:rgba(39,158,122,.25);color:#8FE0BE;padding:4px 9px;border-radius:99px;font-weight:700;}
+  /* location + contact */
+  .reach{background:var(--paper);}
+  .reach-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-line{display:flex;gap:14px;margin-bottom:18px;font-size:.95rem;}
+  .info-line b{color:var(--plum-dark);}
+  .map-box{aspect-ratio:4/3;border-radius:var(--radius);background:var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;margin-top:24px;}
+  form{display:grid;gap:16px;background:var(--cream);padding:32px;border-radius:var(--radius);box-shadow:var(--shadow-soft);}
+  input,textarea,select{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(36,19,24,.15);font-family:var(--font-body);font-size:.92rem;background:var(--paper);}
+  textarea{resize:vertical;min-height:100px;}
+  label{font-size:.8rem;font-weight:700;color:var(--plum-dark);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;display:block;}
+  @media (max-width:860px){ .reach-grid{grid-template-columns:1fr;} }
 
-  /* ===== Why choose us ===== */
-  .why{background:var(--paper);}
-  .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
-  @media(max-width:960px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
-  @media(max-width:520px){ .why-grid{grid-template-columns:1fr;} }
-  .why-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px 20px;text-align:left;transition:transform .3s var(--ease), box-shadow .3s var(--ease);}
-  .why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-  .why-card .wc-icon{
-    width:44px;height:44px;border-radius:10px;
-    background:linear-gradient(145deg,var(--navy),var(--green));
-    display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:16px;font-size:1.1rem;font-weight:800;font-family:'Sora';
-    transition:transform .3s var(--ease);
-  }
-  .why-card:hover .wc-icon{transform:rotate(-8deg) scale(1.08);}
-  .why-card h4{font-size:.96rem;margin-bottom:6px;}
-  .why-card p{font-size:.82rem;color:var(--ink-soft);margin:0;}
+  footer.site{background:var(--plum-dark);color:rgba(248,242,233,.7);padding:40px 0 100px;font-size:.85rem;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-inner a:hover{color:var(--gold-light);}
 
-  /* ===== Location ===== */
-  .location{background:var(--white);}
-  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch;}
-  @media(max-width:860px){ .loc-grid{grid-template-columns:1fr;} }
-  .loc-info{display:flex;flex-direction:column;gap:22px;}
-  .loc-row{display:flex;gap:14px;align-items:flex-start;}
-  .loc-icon{
-    width:42px;height:42px;border-radius:10px;background:rgba(28,122,94,.1);
-    display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0;
-  }
-  .loc-row h4{font-size:.92rem;margin-bottom:4px;}
-  .loc-row p{font-size:.9rem;color:var(--ink-soft);margin:0;}
-  .served-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
-  .served-tags span{background:var(--paper-warm);border:1px solid var(--line);padding:6px 12px;border-radius:99px;font-size:.78rem;font-weight:600;color:var(--navy-deep);transition:background .25s ease,color .25s ease;}
-  .served-tags span:hover{background:var(--navy-deep);color:#fff;}
-  .map-embed{border-radius:16px;overflow:hidden;border:1px solid var(--line);min-height:320px;box-shadow:var(--shadow);}
-  .map-embed iframe{width:100%;height:100%;min-height:320px;border:0;display:block;}
-
-  /* ===== Contact ===== */
-  .contact{
-    background:linear-gradient(150deg,var(--navy-deeper),var(--navy-deep) 70%);
-    color:#fff;
-  }
-  .contact .section-head h2{color:#fff;}
-  .contact .section-head p{color:#B8CACD;}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
-  @media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
-  .contact-form{
-    background:var(--paper);border-radius:18px;padding:30px;color:var(--ink);
-    box-shadow:0 30px 60px -20px rgba(0,0,0,.4);
-  }
-  .contact-form h3{font-size:1.15rem;}
-  .contact-form .sub{color:var(--ink-soft);font-size:.88rem;margin-bottom:22px;}
-  .field{margin-bottom:16px;}
-  .field label{display:block;font-size:.8rem;font-weight:700;margin-bottom:6px;color:var(--navy-deep);}
-  .field input, .field textarea{
-    width:100%;padding:13px 14px;border-radius:10px;border:1.5px solid var(--line);
-    font-family:'Manrope',sans-serif;font-size:.92rem;background:#fff;color:var(--ink);
-    transition:border-color .25s ease, box-shadow .25s ease;
-  }
-  .field input:focus, .field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px rgba(28,122,94,.14);}
-  .field textarea{resize:vertical;min-height:90px;}
-  .contact-form .btn{width:100%;justify-content:center;font-size:1rem;padding:15px;}
-  .contact-form .form-note{font-size:.74rem;color:var(--ink-soft);margin-top:12px;text-align:center;}
-
-  .contact-side{display:flex;flex-direction:column;gap:16px;}
-  .quick-card{
-    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
-    border-radius:16px;padding:22px 24px;display:flex;align-items:center;gap:16px;
-    transition:transform .3s var(--ease), background .3s ease;
-  }
-  .quick-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.11);}
-  .quick-card .qc-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .quick-card.wa .qc-icon{background:var(--whatsapp);}
-  .quick-card.call .qc-icon{background:var(--gold);color:#2A2110;}
-  .quick-card .qc-label{font-size:.76rem;color:#AFC2C6;}
-  .quick-card .qc-value{font-family:'Sora';font-weight:700;font-size:1.05rem;}
-  .quick-card a.qc-btn{margin-left:auto;font-size:.78rem;font-weight:700;background:rgba(255,255,255,.12);padding:8px 14px;border-radius:8px;transition:background .25s ease;}
-  .quick-card a.qc-btn:hover{background:rgba(255,255,255,.22);}
-  .contact-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;}
-  .ch-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;transition:transform .3s var(--ease);}
-  .ch-item:hover{transform:translateY(-3px);}
-  .ch-item .ch-num{font-family:'Sora';font-weight:800;font-size:1.4rem;color:var(--gold);}
-  .ch-item .ch-lbl{font-size:.76rem;color:#AFC2C6;}
-
-  /* ===== Footer ===== */
-  footer{background:var(--navy-deeper);color:#B8CACD;padding:52px 0 26px;}
-  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;}
-  @media(max-width:760px){ .footer-grid{grid-template-columns:1fr;gap:30px;} }
-  .footer-brand{display:flex;align-items:center;gap:10px;font-family:'Sora';font-weight:800;color:#fff;font-size:1.05rem;margin-bottom:12px;}
-  footer p.desc{font-size:.86rem;line-height:1.6;max-width:38ch;}
-  footer h5{color:#fff;font-family:'Sora';font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;}
-  footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
-  footer ul a{font-size:.88rem;transition:color .2s ease, padding-left .2s ease;}
-  footer ul a:hover{color:#fff;padding-left:4px;}
-  .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;
-  }
-
-  /* ===== Sticky mobile CTA ===== */
-  .sticky-cta{
-    position:fixed;bottom:0;left:0;right:0;z-index:60;
-    display:none;gap:0;
-    box-shadow:0 -8px 24px rgba(0,0,0,.15);
-  }
-  .sticky-cta a{
-    flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
-    padding:15px 10px;font-family:'Sora';font-weight:700;font-size:.88rem;color:#fff;
-  }
-  .sticky-cta a.sc-wa{background:var(--whatsapp);}
-  .sticky-cta a.sc-call{background:var(--navy-deep);}
-  @media(max-width:760px){
-    .sticky-cta{display:flex;}
-    body{padding-bottom:58px;}
-  }
-
-  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.001s !important; animation-iteration-count:1 !important; transition-duration:.001s !important; scroll-behavior:auto !important;}
-  }
+  /* sticky mobile CTA bar */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;display:none;gap:10px;padding:12px 16px;background:var(--paper);box-shadow:0 -8px 24px rgba(36,19,24,.14);z-index:50;transform:translateY(120%);transition:transform .4s ease;}
+  .sticky-cta.show{transform:translateY(0);}
+  .sticky-cta a{flex:1;justify-content:center;}
+  @media (max-width:860px){ .sticky-cta{display:flex;} body{padding-bottom:0;} }
 </style>
 </head>
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
+<div class="topbar">Est. 2002 · <strong>Direct Wholesale Supplier</strong> — Skip the Marketplace Markup, Buy Straight From Us</div>
 
-<!-- Top bar -->
-<div class="topbar">
-  <div class="wrap">
-    <div class="tb-item">📍 Kade Shah Chowk, Attari Bazar, Jalandhar, Punjab</div>
-    <div class="tb-item">Since 2002 &nbsp;·&nbsp; Mon–Sat, 9:30 AM – 7:30 PM</div>
-  </div>
-</div>
-
-<!-- Nav -->
-<header class="nav" id="siteNav">
-  <div class="wrap">
-    <div class="brand"><span class="mark">GT</span> Gumber Traders</div>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">GUMBER <span>TRADERS</span></div>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#categories">Products</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#why">Why Us</a>
-      <a href="#location">Location</a>
+      <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-call" href="tel:+919914074261"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Call Now</span></a>
-      <a class="btn btn-whatsapp" href="https://wa.me/919914074261?text=Hi%20Gumber%20Traders%2C%20I%27d%20like%20a%20wholesale%20price%20quote." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>WhatsApp</a>
+      <a class="btn btn-outline btn-sm" href="tel:+919914074261">Call Now</a>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/919914074261" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="heroSection">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="spotlight" id="spotlight"></div>
-  <div class="wrap hero-grid">
+<section class="hero">
+  <div class="container hero-grid">
     <div>
-      <div class="hero-eyebrow reveal-up d1"><span class="dot"></span> GST Registered · Est. 2002</div>
-      <h1 class="reveal-up d2">Trusted Wholesale Supplier of <span class="accent">Cosmetics, Skincare &amp; Baby Care</span> in Jalandhar</h1>
-      <p class="lede reveal-up d3">Gumber Traders supplies retailers, distributors and bulk buyers across Punjab with genuine Nutriglow, Aroma and daily-use personal care products — at competitive wholesale rates, with fast response.</p>
-      <div class="hero-actions reveal-up d4">
-        <a class="btn btn-whatsapp pulse" href="https://wa.me/919914074261?text=Hi%20Gumber%20Traders%2C%20I%27d%20like%20a%20wholesale%20price%20quote." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
-          WhatsApp Now
-        </a>
-        <a class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5);" href="tel:+919914074261">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call Now
-        </a>
+      <p class="eyebrow">Wholesaler &amp; Distributor · Jalandhar, Punjab</p>
+      <h1>Skincare &amp; baby&nbsp;care, <em>direct from the source</em> — not the marketplace.</h1>
+      <p class="lead">Since 2002, Gumber Traders has supplied retailers and distributors across Punjab with genuine Nutriglow &amp; Aroma facial kits, scrubs, sunscreens, bleach creams and baby diapers — at prices you won't find on IndiaMART.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="https://wa.me/919914074261" target="_blank" rel="noopener">Get a Quote on WhatsApp</a>
+        <a class="btn btn-outline" href="tel:+919914074261">Call +91 99140 74261</a>
       </div>
-      <div class="trust-strip reveal-up d5">
-        <div class="trust-item"><span class="ti-num" data-count="23" data-suffix="+">0</span><span class="ti-label">Years in Business</span></div>
-        <div class="trust-item"><span class="ti-num">✔</span><span class="ti-label">Verified GST Supplier</span></div>
-        <div class="trust-item"><span class="ti-num" data-count="100" data-suffix="+">0</span><span class="ti-label">Retail &amp; Distributor Clients</span></div>
-        <div class="trust-item"><span class="ti-num">3.7★</span><span class="ti-label">Buyer Rating</span></div>
+      <div class="trust-strip">
+        <div class="trust-item">2002<small>Established</small></div>
+        <div class="trust-item">8<small>Product Categories</small></div>
+        <div class="trust-item">36+<small>SKUs Stocked</small></div>
+        <div class="trust-item">GST<small>Registered Firm</small></div>
       </div>
     </div>
-    <div class="hero-card reveal-up d3" id="heroCard">
-      <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359783501/OW/MX/SL/147448395/defsefefwed-1000x1000.jpg" alt="Gumber Traders warehouse stock">
-      <div class="hc-tag"><span class="stars">★★★★★</span> Verified Buyers</div>
-      <div class="hc-badge">🚚 PAN-Punjab Dispatch</div>
+    <div style="position:relative;">
+      <div class="hero-visual">[ product range photograph ]</div>
+      <div class="badge-float"><b>K. Kumar</b><span>Proprietor since 2002</span></div>
     </div>
   </div>
 </section>
 
-<!-- FACILITY MARQUEE -->
-<section class="marquee-section">
-  <div class="marquee-label">Our Warehouse &amp; Storefront — Attari Bazar, Jalandhar</div>
-  <div class="marquee-track" id="marqueeTrack">
-    <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359783385/QV/NE/ZR/147448395/defsfs-1000x1000.jpg" alt="Gumber Traders infrastructure" loading="lazy">
-    <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359783918/ED/BT/FX/147448395/sdfwefwe-1000x1000.jpg" alt="Gumber Traders infrastructure facilities" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/10/355476715/FM/CW/CH/147448395/147448395-location-1698225854647-1000x1000.jpg" alt="Gumber Traders storefront" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/10/355476555/OB/CC/VT/147448395/147448395-location-1698225798457-1000x1000.jpg" alt="Gumber Traders shop location" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Board/2023/10/356813425/KC/RX/GZ/147448395/147448395-board-1698648131577-1000x1000.jpg" alt="Gumber Traders signboard" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/3/294875234/SQ/CC/IX/147448395/147448395-location-1679572309429-1000x1000.jpg" alt="Gumber Traders premises" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/3/294875228/MB/BF/HE/147448395/147448395-location-1679572308537-1000x1000.jpg" alt="Gumber Traders premises" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Board/2023/10/355475711/XF/ZJ/GT/147448395/147448395-board-1698225710847-1000x1000.jpg" alt="Gumber Traders signboard" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/6/313893807/VK/DB/EQ/147448395/147448395-location-1686038913609-1000x1000.jpg" alt="Gumber Traders premises" loading="lazy">
-    <!-- duplicate set for seamless loop -->
-    <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359783385/QV/NE/ZR/147448395/defsfs-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359783918/ED/BT/FX/147448395/sdfwefwe-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/10/355476715/FM/CW/CH/147448395/147448395-location-1698225854647-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/10/355476555/OB/CC/VT/147448395/147448395-location-1698225798457-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Board/2023/10/356813425/KC/RX/GZ/147448395/147448395-board-1698648131577-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/3/294875234/SQ/CC/IX/147448395/147448395-location-1679572309429-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/3/294875228/MB/BF/HE/147448395/147448395-location-1679572308537-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Board/2023/10/355475711/XF/ZJ/GT/147448395/147448395-board-1698225710847-1000x1000.jpg" alt="" loading="lazy">
-    <img src="https://5.imimg.com/data5/NSDMERP/Location/2023/6/313893807/VK/DB/EQ/147448395/147448395-location-1686038913609-1000x1000.jpg" alt="" loading="lazy">
-  </div>
-</section>
-
-<!-- ABOUT -->
 <section class="about" id="about">
-  <div class="wrap about-grid">
-    <div class="about-photo fade-up">
-      <div class="clip"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359783918/ED/BT/FX/147448395/sdfwefwe-1000x1000.jpg" alt="Gumber Traders infrastructure facilities"></div>
-      <div class="about-stat"><div class="num">2002</div><div class="lbl">Established in Punjab</div></div>
-    </div>
-    <div>
-      <div class="eyebrow">About Us</div>
-      <h2>A Jalandhar trading house built on stock, price &amp; reliability</h2>
-      <p style="color:var(--ink-soft);font-size:1.02rem;">Gumber Traders has operated out of Jalandhar, Punjab since 2002 as a wholesaler and distributor of cosmetics, skincare, hair care and baby care products. Led by proprietor K Kumar, we supply retailers, chemists, distributors and contractors across Punjab and beyond — with the stock levels and pricing that come from two decades of direct supplier relationships.</p>
-      <ul class="about-list">
-        <li><span class="check">✓</span> Wide, regularly restocked product range across cosmetics, skincare &amp; baby care</li>
-        <li><span class="check">✓</span> Competitive wholesale &amp; bulk-order pricing, no middleman markup</li>
-        <li><span class="check">✓</span> Reliable supply chain with consistent, genuine stock</li>
-        <li><span class="check">✓</span> GST-registered proprietorship — fully compliant billing</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- CATEGORIES -->
-<section class="categories" id="categories">
-  <div class="wrap">
-    <div class="section-head fade-up">
-      <div class="eyebrow">What We Supply</div>
-      <h2>Product Categories</h2>
-      <p>9 categories, 30+ products in stock — tap any category to jump to it in our full catalogue below.</p>
-    </div>
-    <div class="cat-grid">
-      <div class="cat-card fade-up stagger" style="--i:0" data-jump="facial-kit">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583199/JB/DD/RC/147448395/whatsapp-image-2023-11-03-at-10-39-31-am-500x500.jpeg" alt="Facial Kits" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Facial Kits</h3>
-          <p>Nutrigolw, De-Tan, Gold Kesar, Charcoal & Coffee facial kits</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('facial-kit')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:1" data-jump="facial-scrub">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359584350/SI/NO/YL/147448395/nutriglow-vitamin-c-lightening-scrub-500x500.jpg" alt="Facial Scrubs" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Facial Scrubs</h3>
-          <p>Vitamin C, charcoal, papaya, fruit & apricot scrubs</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('facial-scrub')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:2" data-jump="bleach">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589207/NX/XY/MB/147448395/nutriglow-anti-pigmentation-bleach-500x500.jpg" alt="Bleach Creams" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Bleach Creams</h3>
-          <p>Anti-pigmentation, de-tan, ubtan & age-repair bleach</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('bleach')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:3" data-jump="sunscreen">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583586/CD/LO/GE/147448395/nutriglow-anti-pollution-suncreen-50-500x500.jpeg" alt="Sunscreen Lotions" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Sunscreen Lotions</h3>
-          <p>SPF 30 & SPF 50 anti-pollution sunscreens</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('sunscreen')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:4" data-jump="facewash">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583170/FV/DB/JD/147448395/aroma-oil-control-face-wash-500x500.jpg" alt="Face Wash" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Face Wash</h3>
-          <p>Oil control, age control & perfect glow face wash</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('facewash')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:5" data-jump="diaper">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589516/MW/RL/GR/147448395/kiddy-soft-cotton-pants-diaper-500x500.jpg" alt="Diapers — Baby & Adult" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Diapers — Baby &amp; Adult</h3>
-          <p>Cotton pants diapers for babies, plus adult diapers</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('diaper')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:6" data-jump="hairspa">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359280780/DF/RZ/UG/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-500x500.jpeg" alt="Hair Spa Cream" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Hair Spa Cream</h3>
-          <p>Color-protect, keratin, protein &amp; biotin hair spa</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('hairspa')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:7" data-jump="serum">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588120/XZ/RA/DB/147448395/nutigolw-age-repair-tightening-serum-500x500.jpg" alt="Anti-Ageing Serum" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Anti-Ageing Serum</h3>
-          <p>Age-repair tightening &amp; anti-pigmentation serum</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('serum')">View &amp; Get Quote →</a>
-        </div>
-      </div>
-      <div class="cat-card fade-up stagger" style="--i:8" data-jump="creams">
-        <div class="cat-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586724/SP/LL/WW/147448395/spf-aroma-leafs-revitalizing-day-cream-500x500.jpg" alt="Skin Creams & Gels" loading="lazy"></div>
-        <div class="cat-body">
-          <h3>Skin Creams &amp; Gels</h3>
-          <p>Skin whitening cream &amp; aloe vera gel</p>
-          <a class="cat-link" href="#catalog" onclick="setFilter('creams')">View &amp; Get Quote →</a>
-        </div>
+  <div class="container about-grid">
+    <div class="about-visual reveal">[ warehouse / dispatch photograph ]</div>
+    <div class="reveal">
+      <p class="eyebrow">About Us</p>
+      <h2>Two decades of moving genuine stock, fast.</h2>
+      <p style="color:var(--muted);margin-top:16px;max-width:480px;">Gumber Traders was founded in 2002 under proprietor K. Kumar and has grown into a trusted wholesale name for facial kits, scrubs, bleach creams, sunscreens, hair spa and baby diaper brands across Jalandhar and the wider Punjab region. We deal directly with brands like Nutriglow and Aroma — no middlemen, no marketplace commission baked into your price.</p>
+      <div class="stat-row">
+        <div class="stat"><b>2002</b><span>Founded</span></div>
+        <div class="stat"><b>8</b><span>Categories</span></div>
+        <div class="stat"><b>Direct</b><span>Brand Sourcing</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FULL PRODUCT CATALOG -->
-<section class="products" id="catalog">
-  <div class="wrap">
-    <div class="section-head fade-up">
-      <div class="eyebrow">Our Complete Range</div>
-      <h2>Full Product Catalogue</h2>
-      <p>All 32 products we currently stock across 9 categories. Filter by category or enquire directly — prices shown are per unit, wholesale rates on bulk orders.</p>
-    </div>
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All (32)</button>
-      <button class="filter-btn" data-filter="facial-kit" onclick="setFilter('facial-kit')">Facial Kits (5)</button>
-      <button class="filter-btn" data-filter="facial-scrub" onclick="setFilter('facial-scrub')">Facial Scrubs (5)</button>
-      <button class="filter-btn" data-filter="bleach" onclick="setFilter('bleach')">Bleach Creams (4)</button>
-      <button class="filter-btn" data-filter="sunscreen" onclick="setFilter('sunscreen')">Sunscreen Lotions (3)</button>
-      <button class="filter-btn" data-filter="facewash" onclick="setFilter('facewash')">Face Wash (3)</button>
-      <button class="filter-btn" data-filter="diaper" onclick="setFilter('diaper')">Diapers — Baby & Adult (4)</button>
-      <button class="filter-btn" data-filter="hairspa" onclick="setFilter('hairspa')">Hair Spa Cream (4)</button>
-      <button class="filter-btn" data-filter="serum" onclick="setFilter('serum')">Anti-Ageing Serum (2)</button>
-      <button class="filter-btn" data-filter="creams" onclick="setFilter('creams')">Skin Creams & Gels (2)</button>
-    </div>
-    <div class="prod-grid" id="prodGrid">
-      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:0">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583199/JB/DD/RC/147448395/whatsapp-image-2023-11-03-at-10-39-31-am-500x500.jpeg" alt="Nutrigolw Anti Pigmentation Facial Kit" loading="lazy"><span class="price-tag">₹300/Kit</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutrigolw Anti Pigmentation Facial Kit</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutrigolw%20Anti%20Pigmentation%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:1">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359584731/LK/ZY/OK/147448395/nutriglow-de-tan-dullness-removal-facial-kit-500x500.jpeg" alt="Nutriglow De Tan Dullness Removal Facial Kit" loading="lazy"><span class="price-tag">₹250/Kit</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow De Tan Dullness Removal Facial Kit</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20De%20Tan%20Dullness%20Removal%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:2">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587754/CU/MQ/GZ/147448395/nutriglow-gold-kesar-kesar-facial-kit-500x500.jpeg" alt="Nutriglow Gold Kesar Facial Kit (40% off MRP)" loading="lazy"><span class="price-tag">₹150/Kit</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Gold Kesar Facial Kit (40% off MRP)</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Gold%20Kesar%20Facial%20Kit%20%2840%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:3">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359281033/SR/ZU/XX/147448395/whatsapp-image-2023-11-03-at-10-40-07-am-1-500x500.jpeg" alt="Nutriglow Charcoal Facial Kit" loading="lazy"><span class="price-tag">₹700/Kit</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Charcoal Facial Kit</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Charcoal%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-kit" style="--i:4">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588512/LZ/AN/GW/147448395/nutriglow-naturals-coffee-facial-kit-500x500.jpg" alt="Nutriglow Coffee Facial Kit" loading="lazy"><span class="price-tag">₹700/Kit</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Coffee Facial Kit</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Coffee%20Facial%20Kit%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:5">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359584350/SI/NO/YL/147448395/nutriglow-vitamin-c-lightening-scrub-500x500.jpg" alt="Nutriglow Vitamin C Lightening Scrub" loading="lazy"><span class="price-tag">₹275/Tube</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Vitamin C Lightening Scrub</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Vitamin%20C%20Lightening%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:6">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586249/EI/ZL/QF/147448395/aroma-charcoal-oil-check-scrub-500x500.jpg" alt="Aroma Charcoal Oil Check Scrub" loading="lazy"><span class="price-tag">₹295/Tube</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Charcoal Oil Check Scrub</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Charcoal%20Oil%20Check%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:7">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586985/NL/ZD/XG/147448395/aroma-leafs-papaya-facial-scrub-500x500.jpg" alt="Aroma Leafs Papaya Facial Scrub" loading="lazy"><span class="price-tag">₹425/Jar</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Leafs Papaya Facial Scrub</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Leafs%20Papaya%20Facial%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:0">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589761/FN/AP/QL/147448395/aroma-leafs-fresh-fruit-facial-scrub-500x500.jpg" alt="Aroma Leafs Fresh Fruit Facial Scrub" loading="lazy"><span class="price-tag">₹350/Jar</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Leafs Fresh Fruit Facial Scrub</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Leafs%20Fresh%20Fruit%20Facial%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facial-scrub" style="--i:1">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587133/KB/BV/TE/147448395/aroma-fresh-apricot-facial-scrub-500x500.jpg" alt="Aroma Fresh Apricot Facial Scrub" loading="lazy"><span class="price-tag">₹350/Piece</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Fresh Apricot Facial Scrub</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Fresh%20Apricot%20Facial%20Scrub%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:2">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589207/NX/XY/MB/147448395/nutriglow-anti-pigmentation-bleach-500x500.jpg" alt="Nutriglow Anti Pigmentation Bleach" loading="lazy"><span class="price-tag">₹125/Pack</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Anti Pigmentation Bleach</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Anti%20Pigmentation%20Bleach%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:3">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359581666/JL/VC/OS/147448395/nutriglow-de-tan-dullness-removal-bleach-500x500.jpg" alt="Nutriglow De Tan Dullness Removal Bleach" loading="lazy"><span class="price-tag">₹125/Pack</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow De Tan Dullness Removal Bleach</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20De%20Tan%20Dullness%20Removal%20Bleach%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:4">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587265/ZQ/DC/IB/147448395/aroma-ubtan-professional-tan-control-fairness-bleach-cream-500x500.jpg" alt="Aroma Ubtan Tan Control Fairness Bleach Cream" loading="lazy"><span class="price-tag">₹325/Box</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Ubtan Tan Control Fairness Bleach Cream</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Ubtan%20Tan%20Control%20Fairness%20Bleach%20Cream%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="bleach" style="--i:5">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588385/GW/BJ/SG/147448395/nutriglow-age-repair-tightening-bleach-500x500.jpg" alt="Nutriglow Age Repair Tightening Bleach" loading="lazy"><span class="price-tag">₹125/Pack</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Age Repair Tightening Bleach</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Age%20Repair%20Tightening%20Bleach%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="sunscreen" style="--i:6">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583586/CD/LO/GE/147448395/nutriglow-anti-pollution-suncreen-50-500x500.jpeg" alt="SPF 50 Nutriglow Anti Pollution Sunscreen" loading="lazy"><span class="price-tag">₹425/Piece</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>SPF 50 Nutriglow Anti Pollution Sunscreen</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20SPF%2050%20Nutriglow%20Anti%20Pollution%20Sunscreen%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="sunscreen" style="--i:7">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586093/OX/AI/CW/147448395/aroma-sunscreen-lotion-spf-30-500x500.jpg" alt="Aroma Sunscreen Lotion SPF 30" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Sunscreen Lotion SPF 30</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Sunscreen%20Lotion%20SPF%2030%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="sunscreen" style="--i:0">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359590190/US/QE/EN/147448395/aroma-suncreen-lotion-spf-50-500x500.jpg" alt="Aroma Sunscreen Lotion SPF 50" loading="lazy"><span class="price-tag">₹395/Tube</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Sunscreen Lotion SPF 50</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Sunscreen%20Lotion%20SPF%2050%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facewash" style="--i:1">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359583170/FV/DB/JD/147448395/aroma-oil-control-face-wash-500x500.jpg" alt="Aroma Oil Control Face Wash" loading="lazy"><span class="price-tag">₹225/Tube</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Oil Control Face Wash</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Oil%20Control%20Face%20Wash%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facewash" style="--i:2">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359582814/TZ/OG/MK/147448395/aroma-age-control-face-wash-500x500.jpg" alt="Aroma Age Control Face Wash" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Age Control Face Wash</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Age%20Control%20Face%20Wash%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="facewash" style="--i:3">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359582971/AZ/CZ/TI/147448395/aroma-perfect-glow-face-wash-500x500.jpg" alt="Aroma Perfect Glow Face Wash" loading="lazy"><span class="price-tag">₹225/Tube</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Perfect Glow Face Wash</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Perfect%20Glow%20Face%20Wash%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:4">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359589516/MW/RL/GR/147448395/kiddy-soft-cotton-pants-diaper-500x500.jpg" alt="Kiddy Soft Cotton Pants Diaper (25% off MRP)" loading="lazy"><span class="price-tag">₹120/Pack</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Kiddy Soft</div>
-          <h4>Kiddy Soft Cotton Pants Diaper (25% off MRP)</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Kiddy%20Soft%20Cotton%20Pants%20Diaper%20%2825%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:5">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/ANDROID/Default/2023/11/362142484/VM/JY/JE/147448395/product-jpeg-500x500.jpg" alt="Kiddle Care Baby Pant Diaper (25% off MRP)" loading="lazy"><span class="price-tag">₹11/Piece</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Kiddle Care</div>
-          <h4>Kiddle Care Baby Pant Diaper (25% off MRP)</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Kiddle%20Care%20Baby%20Pant%20Diaper%20%2825%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:6">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/357929325/UB/ID/KQ/147448395/all-diapers-500x500.jpg" alt="All Diapers (Mixed Sizes)" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Multiple Brands</div>
-          <h4>All Diapers (Mixed Sizes)</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20All%20Diapers%20%28Mixed%20Sizes%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="diaper" style="--i:7">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/ANDROID/Default/2023/11/362997440/WK/IW/WQ/147448395/product-jpeg-500x500.jpg" alt="Adult Diaper L10 (50% off MRP)" loading="lazy"><span class="price-tag">₹599/Pack</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Multiple Brands</div>
-          <h4>Adult Diaper L10 (50% off MRP)</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Adult%20Diaper%20L10%20%2850%25%20off%20MRP%29%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:0">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359280780/DF/RZ/UG/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-500x500.jpeg" alt="Nutriglow Color Protect Spa" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Color Protect Spa</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Color%20Protect%20Spa%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:1">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359278973/TW/AF/EA/147448395/whatsapp-image-2023-11-03-at-10-40-05-am-500x500.jpeg" alt="Nutriglow Keratin Hair Spa" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Keratin Hair Spa</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Keratin%20Hair%20Spa%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:2">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359278924/RX/RJ/ZH/147448395/whatsapp-image-2023-11-03-at-10-40-05-am-1-500x500.jpeg" alt="Nutriglow Protein Hair Spa" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Protein Hair Spa</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Protein%20Hair%20Spa%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="hairspa" style="--i:3">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359280448/TV/OK/VI/147448395/whatsapp-image-2023-11-03-at-10-40-06-am-1-500x500.jpeg" alt="Nutriglow Biotin Hair Spa Cream" loading="lazy"><span class="price-tag price-ask">Ask for Price</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Biotin Hair Spa Cream</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Biotin%20Hair%20Spa%20Cream%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="serum" style="--i:4">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359588120/XZ/RA/DB/147448395/nutigolw-age-repair-tightening-serum-500x500.jpg" alt="Nutriglow Age Repair Tightening Serum" loading="lazy"><span class="price-tag">₹700/Box</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Age Repair Tightening Serum</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Age%20Repair%20Tightening%20Serum%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="serum" style="--i:5">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359581192/JO/IU/EM/147448395/nutri-anti-pigmentation-serum-500x500.jpg" alt="Nutriglow Anti Pigmentation Serum" loading="lazy"><span class="price-tag">₹700/Box</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Nutriglow</div>
-          <h4>Nutriglow Anti Pigmentation Serum</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Nutriglow%20Anti%20Pigmentation%20Serum%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="creams" style="--i:6">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359586724/SP/LL/WW/147448395/spf-aroma-leafs-revitalizing-day-cream-500x500.jpg" alt="Aroma Perfect Glow Skin Whitening Cream" loading="lazy"><span class="price-tag">₹425/Box</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">Aroma</div>
-          <h4>Aroma Perfect Glow Skin Whitening Cream</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20Aroma%20Perfect%20Glow%20Skin%20Whitening%20Cream%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-      <div class="prod-card fade-up stagger" data-cat="creams" style="--i:7">
-        <div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/359587979/WR/FS/FM/147448395/dr-vegan-aloe-vera-gel-500x500.jpg" alt="DR Vegan Aloe Vera Gel" loading="lazy"><span class="price-tag">₹99/Piece</span></div>
-        <div class="prod-body">
-          <div class="brand-tag">DR Vegan</div>
-          <h4>DR Vegan Aloe Vera Gel</h4>
-          <a class="btn btn-outline" href="https://wa.me/919914074261?text=I%27m%20interested%20in%20DR%20Vegan%20Aloe%20Vera%20Gel%2C%20please%20send%20wholesale%20price." target="_blank" rel="noopener">Enquire Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="testimonials">
-  <div class="wrap">
-    <div class="section-head fade-up">
-      <div class="eyebrow" style="color:var(--gold);">Buyer Feedback</div>
-      <h2>What Our Buyers Say</h2>
-      <p>Verified ratings and reviews from retailers and buyers we've supplied.</p>
-    </div>
-    <div class="rating-summary fade-up">
-      <div class="big" data-count="3.7" data-decimal="1">0</div>
-      <div>
-        <div class="stars">★★★★☆</div>
-        <div class="meta">Based on verified buyer reviews · 100% response rate</div>
-      </div>
-    </div>
-    <div class="t-grid">
-      <div class="t-card fade-up stagger" style="--i:0">
-        <div class="stars">★★★★★</div>
-        <div class="prod">Purchased: Hair Spa Cream</div>
-        <div class="who">
-          <div class="avatar">S</div>
-          <div>
-            <div class="who-name">Santosh Kumari</div>
-            <div class="who-loc">Hussainpur, Punjab</div>
-          </div>
-          <div class="verified">Verified Buyer</div>
-        </div>
-      </div>
-      <div class="t-card fade-up stagger" style="--i:1">
-        <div class="stars">★★★★★</div>
-        <div class="prod">Purchased: Cotton Baby Diapers</div>
-        <div class="who">
-          <div class="avatar">J</div>
-          <div>
-            <div class="who-name">Javed</div>
-            <div class="who-loc">Firozpur, Punjab</div>
-          </div>
-          <div class="verified">Verified Buyer</div>
-        </div>
-      </div>
-      <div class="t-card fade-up stagger" style="--i:2">
-        <div class="stars">★★★★☆</div>
-        <div class="prod">Purchased: Baby Diapers</div>
-        <div class="who">
-          <div class="avatar">S</div>
-          <div>
-            <div class="who-name">Shahid Khan</div>
-            <div class="who-loc">Barwaha, Madhya Pradesh</div>
-          </div>
-          <div class="verified">Verified Buyer</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY CHOOSE US -->
-<section class="why" id="why">
-  <div class="wrap">
-    <div class="section-head fade-up">
-      <div class="eyebrow">Our Edge</div>
-      <h2>Why Buyers Choose Gumber Traders</h2>
+<section class="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why Retailers Choose Us</p>
+      <h2>Built for people who buy in bulk.</h2>
     </div>
     <div class="why-grid">
-      <div class="why-card fade-up stagger" style="--i:0"><div class="wc-icon">₹</div><h4>Competitive Pricing</h4><p>Wholesale rates built for retail &amp; bulk margins.</p></div>
-      <div class="why-card fade-up stagger" style="--i:1"><div class="wc-icon">⚡</div><h4>Fast Response</h4><p>Quotes and stock confirmation, usually within the hour.</p></div>
-      <div class="why-card fade-up stagger" style="--i:2"><div class="wc-icon">✓</div><h4>Trusted Since 2002</h4><p>Two decades of relationships with local businesses.</p></div>
-      <div class="why-card fade-up stagger" style="--i:3"><div class="wc-icon">📦</div><h4>Bulk Order Ready</h4><p>Stock depth to handle large, recurring orders.</p></div>
-      <div class="why-card fade-up stagger" style="--i:4"><div class="wc-icon">★</div><h4>Consistent Quality</h4><p>Genuine, correctly-stored stock — every dispatch.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Direct Pricing</h3><p>No marketplace commission stacked into your rate — order straight from the source.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Genuine Brands</h3><p>Authorized stock of Nutriglow, Aroma and other established skincare brands.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Bulk-Friendly MOQs</h3><p>Order by the box or the case — pricing that scales for shop owners and distributors.</p></div>
+      <div class="why-card reveal"><div class="why-icon"></div><h3>Fast Dispatch</h3><p>Local Jalandhar warehouse means quicker turnaround than most upcountry suppliers.</p></div>
     </div>
   </div>
 </section>
 
-<!-- LOCATION -->
-<section class="location" id="location">
-  <div class="wrap loc-grid">
-    <div class="fade-up">
-      <div class="eyebrow">Find Us</div>
-      <h2>Location &amp; Reach</h2>
-      <div class="loc-info" style="margin-top:20px;">
-        <div class="loc-row">
-          <div class="loc-icon">📍</div>
-          <div>
-            <h4>Registered Address</h4>
-            <p>Kade Shah Chowk, Attari Bazar,<br>Jalandhar, Punjab, India</p>
-          </div>
-        </div>
-        <div class="loc-row">
-          <div class="loc-icon">🕐</div>
-          <div>
-            <h4>Business Hours</h4>
-            <p>Monday – Saturday, 9:30 AM – 7:30 PM</p>
-          </div>
-        </div>
-        <div class="loc-row">
-          <div class="loc-icon">🚚</div>
-          <div>
-            <h4>Areas We Serve</h4>
-            <div class="served-tags">
-              <span>Jalandhar</span><span>Punjab</span><span>Punjab &amp; Neighbouring States</span><span>PAN India Dispatch</span>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Product Categories</p>
+      <h2>Eight categories, 36+ products in stock.</h2>
     </div>
-    <div class="map-embed fade-up">
-      <iframe src="https://www.google.com/maps?q=Kade+Shah+Chowk,+Attari+Bazar,+Jalandhar,+Punjab&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Gumber Traders location map"></iframe>
+    <div class="cat-grid">
+      <div class="cat-card reveal"><b>Facial Kits</b><span>12 Products</span></div>
+      <div class="cat-card reveal"><b>Facial Scrubs</b><span>5 Products</span></div>
+      <div class="cat-card reveal"><b>Bleach Creams</b><span>4 Products</span></div>
+      <div class="cat-card reveal"><b>Sunscreen Lotions</b><span>3 Products</span></div>
+      <div class="cat-card reveal"><b>Face Wash</b><span>3 Products</span></div>
+      <div class="cat-card reveal"><b>Baby Diapers</b><span>3 Products</span></div>
+      <div class="cat-card reveal"><b>Hair Spa Creams</b><span>4 Products</span></div>
+      <div class="cat-card reveal"><b>Anti-Ageing Serums</b><span>2 Products</span></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="section-head fade-up">
-      <div class="eyebrow" style="color:var(--gold);">Get In Touch</div>
-      <h2>Get the Best Wholesale Price</h2>
-      <p>Tell us what you need — we'll come back with pricing and availability, fast.</p>
+<section class="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Featured Products</p>
+      <h2>A few of our best-moving lines.</h2>
     </div>
-    <div class="contact-grid">
-      <form class="contact-form fade-up" onsubmit="return handleEnquiry(event)">
-        <h3>Request a Quote</h3>
-        <div class="sub">Fill this in and we'll confirm pricing over WhatsApp or a call.</div>
-        <div class="field">
-          <label for="cf-name">Your Name</label>
-          <input id="cf-name" type="text" placeholder="e.g. Ramesh Verma" required>
-        </div>
-        <div class="field">
-          <label for="cf-phone">Phone Number</label>
-          <input id="cf-phone" type="tel" placeholder="e.g. 98765 43210" required pattern="[0-9+ ]{8,15}">
-        </div>
-        <div class="field">
-          <label for="cf-req">What do you need?</label>
-          <textarea id="cf-req" placeholder="Product(s), quantity, and your city" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold">Get Best Price</button>
-        <div class="form-note">Submitting opens WhatsApp with your details pre-filled — no spam, ever.</div>
-      </form>
-      <div class="contact-side fade-up">
-        <div class="quick-card wa">
-          <div class="qc-icon"><svg viewBox="0 0 24 24" fill="#fff" width="22" height="22"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg></div>
-          <div><div class="qc-label">Chat instantly</div><div class="qc-value">WhatsApp Us</div></div>
-          <a class="qc-btn" href="https://wa.me/919914074261?text=Hi%20Gumber%20Traders%2C%20I%27d%20like%20a%20wholesale%20price%20quote." target="_blank" rel="noopener">Open Chat</a>
-        </div>
-        <div class="quick-card call">
-          <div class="qc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2A2110" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><div class="qc-label">Speak to us</div><div class="qc-value">+91 99140 74261</div></div>
-          <a class="qc-btn" href="tel:+919914074261">Call</a>
-        </div>
-        <div class="contact-highlights">
-          <div class="ch-item"><div class="ch-num">&lt;1hr</div><div class="ch-lbl">Typical response time</div></div>
-          <div class="ch-item"><div class="ch-num">23+ yrs</div><div class="ch-lbl">In wholesale trade</div></div>
-          <div class="ch-item"><div class="ch-num">GST</div><div class="ch-lbl">Registered supplier</div></div>
-          <div class="ch-item"><div class="ch-num">100+</div><div class="ch-lbl">Business clients</div></div>
-        </div>
-      </div>
+    <div class="prod-grid">
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Anti Pigmentation Facial Kit</h3><div class="prod-price">₹300 / kit</div></div></div>
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Aroma</div><h3>Perfect Glow Skin Whitening Cream</h3><div class="prod-price">₹425 / box</div></div></div>
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Charcoal Facial Kit</h3><div class="prod-price">₹700 / kit</div></div></div>
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Aroma</div><h3>Sunscreen Lotion SPF 50</h3><div class="prod-price">₹395 / tube</div></div></div>
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Kiddy Soft</div><h3>Cotton Pants Diaper</h3><div class="prod-price">₹120 / pack</div></div></div>
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Age Repair Tightening Serum</h3><div class="prod-price">₹700 / box</div></div></div>
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Aroma</div><h3>Oil Control Face Wash</h3><div class="prod-price">₹225 / tube</div></div></div>
+      <div class="prod-card reveal"><div class="prod-img">[ image ]</div><div class="prod-body"><div class="prod-brand">Nutriglow</div><h3>Keratin Hair Spa</h3><div class="prod-price">Ask for price</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a class="btn btn-gold" href="https://wa.me/919914074261" target="_blank" rel="noopener">See Full Catalogue on WhatsApp</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand"><span class="mark" style="width:32px;height:32px;font-size:.85rem;">GT</span> Gumber Traders</div>
-        <p class="desc">Wholesale supplier of cosmetics, skincare, hair care and baby care products, trading out of Jalandhar, Punjab since 2002.</p>
-        <p class="desc" style="margin-top:10px;">Proprietor: K Kumar &nbsp;·&nbsp; GST Registered</p>
-      </div>
-      <div>
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#categories">Products</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#contact">Get a Quote</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="tel:+919914074261">📞 +91 99140 74261</a></li>
-          <li><a href="https://wa.me/919914074261" target="_blank" rel="noopener">💬 WhatsApp Us</a></li>
-          <li>📍 Kade Shah Chowk, Attari Bazar, Jalandhar</li>
-        </ul>
-      </div>
+<section class="testi" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Testimonials</p>
+      <h2>What retailers say about ordering with us.</h2>
     </div>
-    <div class="footer-bottom">
-      <div>© 2026 Gumber Traders. All rights reserved.</div>
-      <div>Wholesaler / Distributor · Proprietorship · Jalandhar, Punjab</div>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Prices are noticeably better than what I was paying through the marketplace listing, and dispatch is quicker since they're local."</p><footer>— Retail Chemist, Jalandhar</footer></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Been ordering facial kits and scrubs for our salon supply chain for over a year. Stock is always genuine Nutriglow."</p><footer>— Salon Supply Distributor, Punjab</footer></div>
+      <div class="testi-card reveal"><div class="stars">★★★★☆</div><p>"Good for bulk diaper orders — reasonable minimum quantities and they're easy to reach on WhatsApp for reorders."</p><footer>— General Store Owner, Jalandhar</footer></div>
+    </div>
+  </div>
+</section>
+
+<section class="reach" id="contact">
+  <div class="container reach-grid">
+    <div class="reveal">
+      <p class="eyebrow">Visit / Reach Us</p>
+      <h2 style="margin-bottom:24px;">Come by the shop or reach out directly.</h2>
+      <div class="info-line"><b>Address:</b><span>Kade Shah Chowk, Attari Bazar, Jalandhar, Punjab</span></div>
+      <div class="info-line"><b>Phone:</b><span>+91 99140 74261</span></div>
+      <div class="info-line"><b>Proprietor:</b><span>K. Kumar</span></div>
+      <div class="info-line"><b>Established:</b><span>2002</span></div>
+      <div class="map-box">[ map / directions embed ]</div>
+    </div>
+    <form class="reveal" onsubmit="return false;">
+      <div>
+        <label>Your Name</label>
+        <input type="text" placeholder="Full name" required>
+      </div>
+      <div>
+        <label>Phone Number</label>
+        <input type="tel" placeholder="10-digit mobile number" required>
+      </div>
+      <div>
+        <label>Interested In</label>
+        <select>
+          <option>Facial Kits</option>
+          <option>Facial Scrubs</option>
+          <option>Bleach Creams</option>
+          <option>Sunscreen Lotions</option>
+          <option>Face Wash</option>
+          <option>Baby Diapers</option>
+          <option>Hair Spa Creams</option>
+          <option>Anti-Ageing Serums</option>
+          <option>Full Catalogue</option>
+        </select>
+      </div>
+      <div>
+        <label>Message / Quantity Required</label>
+        <textarea placeholder="e.g. 5 boxes of facial kits, monthly reorder"></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold" style="justify-content:center;">Request a Quote</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container footer-inner">
+    <span>&copy; 2026 Gumber Traders, Jalandhar. All rights reserved.</span>
+    <div style="display:flex;gap:20px;">
+      <a href="tel:+919914074261">Call</a>
+      <a href="https://wa.me/919914074261" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#contact">Get Quote</a>
     </div>
   </div>
 </footer>
 
-<!-- Sticky mobile CTA -->
-<div class="sticky-cta">
-  <a class="sc-call" href="tel:+919914074261">📞 Call Now</a>
-  <a class="sc-wa" href="https://wa.me/919914074261?text=Hi%20Gumber%20Traders%2C%20I%27d%20like%20a%20wholesale%20price%20quote." target="_blank" rel="noopener">💬 WhatsApp</a>
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-outline" href="tel:+919914074261">Call Now</a>
+  <a class="btn btn-whatsapp" href="https://wa.me/919914074261" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
 <script>
-  // Enquiry form -> WhatsApp handoff
-  // Product catalogue filter
-  function setFilter(key){
-    document.querySelectorAll('.filter-btn').forEach(function(btn){
-      btn.classList.toggle('active', btn.getAttribute('data-filter') === key);
-    });
-    document.querySelectorAll('#prodGrid .prod-card').forEach(function(card){
-      var match = (key === 'all' || card.getAttribute('data-cat') === key);
-      card.classList.toggle('hidden', !match);
-      if(match){ card.classList.add('in'); }
-    });
-  }
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
 
-  function handleEnquiry(e){
-    e.preventDefault();
-    var name = document.getElementById('cf-name').value.trim();
-    var phone = document.getElementById('cf-phone').value.trim();
-    var req = document.getElementById('cf-req').value.trim();
-    var msg = "Hi Gumber Traders, my name is " + name + " (" + phone + "). I need: " + req;
-    window.open("https://wa.me/919914074261?text=" + encodeURIComponent(msg), "_blank");
-    return false;
-  }
-
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Scroll progress bar
-  var progressBar = document.getElementById('progressBar');
-  function updateProgress(){
-    var h = document.documentElement;
-    var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-    progressBar.style.width = scrolled + '%';
-  }
-  window.addEventListener('scroll', updateProgress, {passive:true});
-
-  // Nav shrink on scroll
-  var nav = document.getElementById('siteNav');
-  function updateNav(){
-    if(window.scrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
-  }
-  window.addEventListener('scroll', updateNav, {passive:true});
-  updateNav();
-
-  // Hero spotlight follows cursor (desktop only)
-  var hero = document.getElementById('heroSection');
-  var spotlight = document.getElementById('spotlight');
-  if(hero && spotlight && window.matchMedia('(hover:hover)').matches && !reduceMotion){
-    hero.addEventListener('mousemove', function(e){
-      var r = hero.getBoundingClientRect();
-      var mx = ((e.clientX - r.left) / r.width) * 100;
-      var my = ((e.clientY - r.top) / r.height) * 100;
-      spotlight.style.setProperty('--mx', mx + '%');
-      spotlight.style.setProperty('--my', my + '%');
-    });
-  }
-
-  // Hero card subtle 3D tilt
-  var heroCard = document.getElementById('heroCard');
-  if(heroCard && window.matchMedia('(hover:hover)').matches && !reduceMotion){
-    heroCard.addEventListener('mousemove', function(e){
-      var r = heroCard.getBoundingClientRect();
-      var px = (e.clientX - r.left) / r.width - 0.5;
-      var py = (e.clientY - r.top) / r.height - 0.5;
-      heroCard.style.transform = 'perspective(900px) rotateY(' + (px*8) + 'deg) rotateX(' + (-py*8) + 'deg)';
-    });
-    heroCard.addEventListener('mouseleave', function(){
-      heroCard.style.transform = 'perspective(900px) rotateY(0) rotateX(0)';
-    });
-  }
-
-  // Card tilt for category & product cards
-  function attachTilt(selector, strength){
-    if(!window.matchMedia('(hover:hover)').matches || reduceMotion) return;
-    document.querySelectorAll(selector).forEach(function(card){
-      card.addEventListener('mousemove', function(e){
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = 'translateY(-6px) perspective(700px) rotateY(' + (px*strength) + 'deg) rotateX(' + (-py*strength) + 'deg)';
-      });
-      card.addEventListener('mouseleave', function(){
-        card.style.transform = '';
-      });
-    });
-  }
-  attachTilt('.cat-card', 6);
-  attachTilt('.prod-card', 5);
-  attachTilt('.why-card', 5);
-
-  // Reveal-on-scroll with stagger
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.12});
-  document.querySelectorAll('.fade-up').forEach(function(el){ observer.observe(el); });
-
-  // Count-up numbers
-  function animateCount(el){
-    var target = parseFloat(el.getAttribute('data-count'));
-    var decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
-    var suffix = el.getAttribute('data-suffix') || '';
-    var duration = 1400;
-    var start = null;
-    function step(ts){
-      if(!start) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      var val = target * eased;
-      el.textContent = (decimals ? val.toFixed(decimals) : Math.round(val)) + suffix;
-      if(progress < 1){ requestAnimationFrame(step); }
-    }
-    if(reduceMotion){
-      el.textContent = (decimals ? target.toFixed(decimals) : target) + suffix;
-    } else {
-      requestAnimationFrame(step);
-    }
-  }
-  var countEls = document.querySelectorAll('[data-count]');
-  var countObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        animateCount(entry.target);
-        countObserver.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.5});
-  countEls.forEach(function(el){ countObserver.observe(el); });
+  // sticky mobile CTA appears after scrolling past hero
+  const stickyCta = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 420) stickyCta.classList.add('show');
+    else stickyCta.classList.remove('show');
+  });
 </script>
 
 </body>
